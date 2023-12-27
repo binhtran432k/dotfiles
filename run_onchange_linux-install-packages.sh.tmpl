@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+paru -Syu
+
+paru --needed -S
+{{- range .packages.linux.arch -}}
+  {{- . | printf " %s" -}}
+{{- end -}}
+{{- range .packages.linux.aur -}}
+  {{- . | printf " %s" -}}
+{{- end }}
+
+{{ end -}}

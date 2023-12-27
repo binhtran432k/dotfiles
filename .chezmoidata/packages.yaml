@@ -1,0 +1,58 @@
+packages:
+  linux:
+    arch:
+    # development
+    - 'git' # most popular distributed version control system
+    - 'base-devel' # basic development tools
+    - 'cmake' # for compiling c/c++
+    - 'nodejs' # for nodejs apps
+    - 'cargo' # for install rust relates
+    - 'typst' # for pdf writing
+    # ultility
+    - 'yazi' # terminal file manager
+    - 'zellij' # session manager
+    - 'zoxide' # alternative for cd
+    - 'tree' # tree view
+    - 'ibus' # input method
+    # media
+    - 'mpv' # audio, video player
+    - 'grim' # screenshot tool
+    - 'slurp' # area selection tool
+    - 'zathura' # pdf viewer
+    - 'zathura-pdf-mupdf' # zathura deps
+    # theme
+    - 'papirus-icon-theme' # papirus icon theme
+    - 'qt5ct' # for qt5 look and feel
+    - 'qt6ct' # for qt6 look and feel
+    # desktop
+    - 'hyprland' # window manager
+    - 'mako' # notification
+    - 'swaylock' # locker
+    - 'swayidle' # idle daemon
+    - 'pipewire' # multimedia
+    - 'pipewire-audio' # pipewire audio
+    - 'pipewire-pulse' # pipewire pulseaudio client
+    - 'wireplumber' # pipewire deps
+    - 'brightnessctl' # brightness conroller
+    - 'gammastep' # color temperature
+    - 'polkit-kde-agent' # authentication agent
+    - 'xdg-desktop-portal-hyprland' # hyprland screensharing support
+    - 'xdg-desktop-portal-gtk' # for file picker ui
+    - 'wl-clipboard' # cli clipboard
+    - 'qt5-wayland' # for qt5 apps in wayland
+    - 'qt6-wayland' # for qt6 apps in wayland
+    aur:
+    # development
+    - 'bun-bin' # alternative for nodejs
+    # theme
+    - 'nwg-look-bin' # for gtk look and feel
+    - 'full-dracula-theme-git' # dracula themes for gtk, kde, cursor
+    # desktop
+    - 'eww-wayland' # bar
+    - 'swww' # wallpaper
+    - 'swayosd-git' # osd
+    - 'sassc' # FIXME: remove when sway-osd upgraded
+    # ultility
+    - 'ibus-bamboo-git' # vietnamese input method
+    # media
+    - 'brave-bin' # browser
