@@ -1,5 +1,6 @@
 simplified_ui true
 default_layout "compact"
+default_shell "nu"
 theme "custom"
 themes {
   custom {
