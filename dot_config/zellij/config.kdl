@@ -2,6 +2,13 @@ simplified_ui true
 default_layout "compact"
 default_shell "nu"
 theme "custom"
+
+ui {
+  pane_frames {
+    rounded_corners true
+  }
+}
+
 themes {
   custom {
     fg "#F8F8F2"
@@ -17,6 +24,7 @@ themes {
     orange "#FFB86C"
   }
 }
+
 keybinds {
   shared {
     unbind "Ctrl o"
