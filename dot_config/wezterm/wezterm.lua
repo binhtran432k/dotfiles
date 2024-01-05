@@ -16,7 +16,7 @@ config.font = wezterm.font({ family = "Maple Mono" })
 
 config.bold_brightens_ansi_colors = true
 
-config.color_scheme = "dracula"
+config.color_scheme = "Dracula"
 
 config.window_background_opacity = 0.7
 config.text_background_opacity = 0.8
