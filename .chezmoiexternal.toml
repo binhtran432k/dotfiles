@@ -1,0 +1,24 @@
+[".fonts/Operator-Mono"]
+    type = "archive"
+    url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Operator-Mono.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+[".fonts/Window-Fonts"]
+    type = "archive"
+    url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Window-Fonts.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
+[".wallpaper.jpg"]
+    type = "file"
+    url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Aqua.jpg"
+    exact = true
+    refreshPeriod = "168h"
+
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/binhtran432k/nvim.git"
+    refreshPeriod = "168h"
