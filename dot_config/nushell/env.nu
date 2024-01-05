@@ -104,4 +104,9 @@ $env.BROWSER = "brave"
 $env.EDITOR = "nvim"
 $env.VISUAL = $env.EDITOR
 
+# Zoxide
 zoxide init nushell | str replace "def-env" "def --env" --all | save -f ~/.zoxide.nu
+
+# Starship
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
