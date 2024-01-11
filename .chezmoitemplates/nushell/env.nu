@@ -105,7 +105,7 @@ $env.EDITOR = "nvim"
 $env.VISUAL = $env.EDITOR
 
 # Zoxide
-zoxide init nushell | str replace "def-env" "def --env" --all | save -f ~/.zoxide.nu
+zoxide init nushell | str replace "def-env" "def --env" --all | str replace "$env.PWD -- $rest" "$env.PWD -- ...$rest" --all | save -f ~/.zoxide.nu
 
 # Starship
 mkdir ~/.cache/starship

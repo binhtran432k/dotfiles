@@ -1,6 +1,22 @@
 README.md
 
-.config/nushell/history.txt
-
 Makefile
 scripts/
+
+.config/nushell/history.txt
+AppData/Roaming/nushell/history.txt
+
+{{- if ne .chezmoi.os "linux" }}
+
+.config/*
+!.config/nushell
+!.config/wezterm
+
+.config/nushell/*
+!.config/nushell/completions
+
+{{- else if ne .chezmoi.os "windows" }}
+
+AppData/
+
+{{- end }}
