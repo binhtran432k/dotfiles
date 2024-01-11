@@ -110,3 +110,21 @@ zoxide init nushell | str replace "def-env" "def --env" --all | str replace "$en
 # Starship
 mkdir ~/.cache/starship
 starship init nu | save -f ~/.cache/starship/init.nu
+
+# FNM
+if not (which fnm | is-empty) {
+  ^fnm env --json | from json | load-env
+
+  let node_path = if (sys).host.name == 'Windows' {
+    $"($env.FNM_MULTISHELL_PATH)"
+  } else {
+    $"($env.FNM_MULTISHELL_PATH)/bin"
+  }
+
+  # Checking `Path` for Windows
+  if 'Path' in $env {
+    $env.Path = ($env.Path | prepend $node_path)
+  } else {
+    $env.PATH = ($env.PATH | prepend $node_path)
+  }
+}
