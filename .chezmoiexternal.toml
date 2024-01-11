@@ -1,3 +1,5 @@
+{{ if eq .chezmoi.os "linux" -}}
+
 [".fonts/Operator-Mono"]
     type = "archive"
     url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Operator-Mono.zip"
@@ -22,3 +24,12 @@
     type = "git-repo"
     url = "https://github.com/binhtran432k/nvim.git"
     refreshPeriod = "168h"
+
+{{- else if eq .chezmoi.os "windows" -}}
+
+["AppData/Local/nvim"]
+    type = "git-repo"
+    url = "https://github.com/binhtran432k/nvim.git"
+    refreshPeriod = "168h"
+
+{{- end -}}
