@@ -8,6 +8,10 @@ AppData/Roaming/nushell/history.txt
 
 {{- if ne .chezmoi.os "linux" }}
 
+.profile
+.xinitrc
+.Xresources
+.gtkrc-2.0
 .config/*
 !.config/nushell
 !.config/wezterm
