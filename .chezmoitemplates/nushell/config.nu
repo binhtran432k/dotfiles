@@ -792,9 +792,9 @@ def --env ya [args?] {
     } else {
         yazi $args --cwd-file $tmp
     }
-	let cwd = (open $tmp)
-	if $cwd != "" and $cwd != $env.PWD {
-		cd $cwd
-	}
-	rm -f $tmp
+    let cwd = (open $tmp)
+    if $cwd != "" and $cwd != $env.PWD {
+    	cd $cwd
+    }
+    rm -f $tmp
 }
