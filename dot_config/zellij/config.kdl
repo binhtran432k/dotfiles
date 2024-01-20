@@ -31,6 +31,7 @@ keybinds {
     unbind "Ctrl g"
     unbind "Ctrl h"
     unbind "Ctrl q"
+    unbind "Ctrl s"
   }
   shared_except "locked" {
     bind "Alt 9" { SwitchToMode "locked"; }
@@ -45,5 +46,6 @@ keybinds {
     bind "J" { MovePane "Down"; }
     bind "K" { MovePane "Up"; }
     bind "L" { MovePane "Right"; }
+    bind "s" { SwitchToMode "scroll"; }
   }
 }
