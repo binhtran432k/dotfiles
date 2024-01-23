@@ -128,3 +128,6 @@ if not (which fnm | is-empty) {
     $env.PATH = ($env.PATH | prepend $node_path)
   }
 }
+
+# Lazygit
+alias lg = lazygit
