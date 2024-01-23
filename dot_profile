@@ -18,3 +18,6 @@ export CHROME_EXECUTABLE=$BROWSER
 export VISUAL=$EDITOR
 # Make hidden file on top with ls
 export LC_COLLATE="C"
+
+# extends PATH
+export PATH="$PATH:$HOME/.cargo/bin"
