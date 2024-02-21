@@ -5,14 +5,14 @@
     url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Operator-Mono.zip"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "720h"
 
 [".fonts/Window-Fonts"]
     type = "archive"
     url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Window-Fonts.zip"
     exact = true
     stripComponents = 1
-    refreshPeriod = "168h"
+    refreshPeriod = "720h"
 
 [".wallpaper.jpg"]
     type = "file"
@@ -20,18 +20,18 @@
     # url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/pink-bridge.jpg"
     url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/fantasy-space.jpg"
     exact = true
-    refreshPeriod = "168h"
+    refreshPeriod = "720h"
 
 [".config/nvim"]
     type = "git-repo"
     url = "https://github.com/binhtran432k/nvim.git"
-    refreshPeriod = "168h"
+    refreshPeriod = "720h"
 
 {{- else if eq .chezmoi.os "windows" -}}
 
 ["AppData/Local/nvim"]
     type = "git-repo"
     url = "https://github.com/binhtran432k/nvim.git"
-    refreshPeriod = "168h"
+    refreshPeriod = "720h"
 
 {{- end -}}
