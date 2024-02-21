@@ -8,8 +8,6 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
-config.enable_wayland = false -- FIXME: remove when wezterm wayland working again
-
 -- This is where you actually apply your config choices
 -- config.font = wezterm.font({ family = "Cascadia Code", harfbuzz_features = { "calt=1", "ss01=1" } })
 config.font = wezterm.font({ family = "Maple Mono" })
