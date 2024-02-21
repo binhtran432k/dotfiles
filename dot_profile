@@ -19,5 +19,8 @@ export VISUAL=$EDITOR
 # Make hidden file on top with ls
 export LC_COLLATE="C"
 
+export GEM_HOME="$(gem env user_gemhome)"
+
 # extends PATH
+export PATH="$PATH:$GEM_HOME/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
