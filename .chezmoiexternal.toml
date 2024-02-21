@@ -16,7 +16,9 @@
 
 [".wallpaper.jpg"]
     type = "file"
-    url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Aqua.jpg"
+    # url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/Aqua.jpg"
+    # url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/pink-bridge.jpg"
+    url = "https://github.com/binhtran432k/dotfiles/releases/download/archive/fantasy-space.jpg"
     exact = true
     refreshPeriod = "168h"
 
