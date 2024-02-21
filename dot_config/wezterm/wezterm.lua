@@ -9,8 +9,8 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
--- config.font = wezterm.font({ family = "Cascadia Code", harfbuzz_features = { "calt=1", "ss01=1" } })
-config.font = wezterm.font({ family = "Maple Mono" })
+config.font = wezterm.font({ family = "Cascadia Code", harfbuzz_features = { "calt=1", "ss01=1" } })
+-- config.font = wezterm.font({ family = "Maple Mono" })
 
 config.bold_brightens_ansi_colors = true
 
