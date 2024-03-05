@@ -2,6 +2,7 @@ README.md
 
 Makefile
 scripts/
+x11/
 
 .config/nushell/history.txt
 AppData/Roaming/nushell/history.txt
