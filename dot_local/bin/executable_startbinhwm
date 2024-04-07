@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+killall fcitx5 feh dunst dwm safeeyes;
+
+fcitx5 -dr &
+feh --bg-scale ~/.wallpaper.jpg &
+swayosd-server &
+redshift -l 10.8:106.6 &
+xset r rate 300 50 &
+safeeyes &
+dunst &
+# exec dwm
+while true; do
+    # Log stderror to a file 
+    dwm 2> ~/.dwm.log
+    # No error logging
+    #dwm >/dev/null 2>&1
+done
