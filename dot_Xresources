@@ -1,5 +1,5 @@
 ! dpi is multiply of 96
-Xft.dpi: 115
+Xft.dpi: 120
 
 Xcursor.theme: Dracula-cursors
 Xcursor.size: 16
