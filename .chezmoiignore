@@ -2,6 +2,7 @@ README.md
 
 Makefile
 scripts/
+penrose/
 x11/
 
 .config/nushell/history.txt
