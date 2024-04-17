@@ -84,9 +84,5 @@ packages:
     ## theme
     - 'nwg-look-bin' # for gtk look and feel
     - 'full-dracula-theme-git' # dracula themes for gtk, kde, cursor
-    ## desktop
-    - 'wlogout' # logout gui
-    - 'swayosd-git' # osd
-    - 'sassc' # FIXME: remove when sway-osd upgraded
     ## media
     - 'brave-bin' # browser
