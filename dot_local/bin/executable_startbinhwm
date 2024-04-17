@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 
 killall fcitx5 feh dunst dwm safeeyes;
 
