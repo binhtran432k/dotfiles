@@ -157,7 +157,7 @@ notify_volume() {
     else
         printf -v summary "Volume %3s%%" "$vol"
         if $SHOW_VOLUME_PROGRESS; then
-            local -r progress=$(progress_bar "$vol")
+            local -r progress=$(progress_bar "$vol" "$MAX_VOLUME")
 
             summary="$summary $progress"
         fi
@@ -338,6 +338,25 @@ exec_command() {
     esac
 }
 
+lock_control() {
+    COMMAND=$1
+
+    case "$COMMAND" in
+        unlock)
+            unlock_control
+            exit 0
+            ;;
+    esac
+
+    if ! (set -o noclobber ; echo > $LOCK) ; then
+        exit 1
+    fi
+}
+
+unlock_control() {
+    rm -f $LOCK
+}
+
 main() {
     declare \
         COMMAND \
@@ -348,11 +367,16 @@ main() {
         EXPIRES=1500 \
         MAX_VOLUME=200
 
+
+    LOCK=/tmp/mycontrol.lock
+
+    lock_control "$1"
     define_helpers
     define_commands
     setup_pulseaudio
     setup_light
     exec_command "$@"
+    unlock_control
 }
 
 main "$@"
