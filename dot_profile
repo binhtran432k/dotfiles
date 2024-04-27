@@ -22,6 +22,8 @@ export LC_COLLATE="C"
 export GEM_HOME="$(gem env user_gemhome)"
 
 # extends PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bob/nvim-bin:$PATH"
 export PATH="$GEM_HOME/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
