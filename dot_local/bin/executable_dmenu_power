@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+
+power() {
+    if [[ -n $@ ]]; then
+        [[ $@ = "lock"  ]] && binhlock
+        [[ $@ = "suspend"  ]] && systemctl suspend
+        [[ $@ = "restart wm"  ]] && killall dwm
+        [[ $@ = "log off"  ]] && killall xinit
+        [[ $@ = "shutdown"  ]] && shutdown now
+        [[ $@ = "reboot"  ]] && reboot
+    fi
+}
+
+mode=$(echo -e "lock\nsuspend\nrestart wm\nlog off\nshutdown\nreboot" | dmenu)
+
+power $mode
