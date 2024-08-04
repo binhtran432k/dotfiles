@@ -16,8 +16,8 @@ config.bold_brightens_ansi_colors = true
 
 config.color_scheme = "Dracula"
 
-config.window_background_opacity = 0.7
-config.text_background_opacity = 0.8
+config.window_background_opacity = 0.8
+config.text_background_opacity = 0.9
 config.window_padding = {
   top = 0,
   left = 0,
