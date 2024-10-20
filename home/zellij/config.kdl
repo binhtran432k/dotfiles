@@ -1,0 +1,37 @@
+simplified_ui true
+default_layout "custom"
+theme "dracula"
+
+keybinds clear-defaults=true {
+  shared_except "locked" {
+    bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
+    bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
+    bind "Alt j" "Alt Down" { MoveFocus "Down"; }
+    bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+    bind "Alt =" "Alt +" { Resize "Increase"; }
+    bind "Alt -" { Resize "Decrease"; }
+    bind "Alt 9" { SwitchToMode "locked"; }
+  }
+  normal {
+    bind "Ctrl a" { SwitchToMode "tmux"; }
+  }
+  tmux {
+    bind "Q" { Quit; }
+    bind "C" { Clear; SwitchToMode "normal"; }
+    bind "D" { Detach; }
+    bind "H" { MovePane "Left"; }
+    bind "J" { MovePane "Down"; }
+    bind "K" { MovePane "Up"; }
+    bind "L" { MovePane "Right"; }
+    bind "e" { EditScrollback; SwitchToMode "normal"; }
+    bind "d" { HalfPageScrollDown; }
+    bind "u" { HalfPageScrollUp; }
+    bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+    bind "p" { ToggleFloatingPanes; SwitchToMode "normal"; }
+    bind "n" { NewPane; SwitchToMode "normal"; }
+    bind "Esc" "Ctrl a" { SwitchToMode "normal"; }
+  }
+  locked {
+    bind "Alt 9" { SwitchToMode "normal"; }
+  }
+}

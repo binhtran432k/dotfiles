@@ -1,0 +1,5 @@
+require("binhtran432k.globals")
+require("binhtran432k.options")
+require("binhtran432k.keymaps")
+require("binhtran432k.autocmds")
+require("binhtran432k.core")
