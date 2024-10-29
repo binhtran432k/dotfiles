@@ -10,7 +10,11 @@
   lib,
   ...
 }: {
-  imports = [./share.nix];
+  imports = [
+    ./share.nix
+    ../../nixos/core_pkgs.nix
+    ../../nixos/nix-ld.nix
+  ];
 
   wsl.enable = true;
   wsl.defaultUser = "binhtran432k";
