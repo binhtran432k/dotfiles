@@ -41,10 +41,6 @@ return { -- Collection of various small independent plugins/modules
 
     -- ... and there is mores
     --  Check out: htts://github.com/echasnovski/mini.nvim
-    require("mini.jump2d").setup({
-      view = { dim = true },
-    })
-
     require("mini.bracketed").setup()
 
     require("mini.starter").setup()
