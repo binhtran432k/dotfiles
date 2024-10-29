@@ -14,6 +14,9 @@
 
   wsl.enable = true;
   wsl.defaultUser = "binhtran432k";
+  environment.systemPackages = with pkgs; [
+    win32yank # terminal clipboard for wsl
+  ];
 
   users.defaultUserShell = pkgs.fish;
   programs.fish.enable = true;
