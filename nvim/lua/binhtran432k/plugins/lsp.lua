@@ -127,6 +127,7 @@ return {
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --- @type table<string, lspconfig.Config>
       local servers = {
+        biome = {},
         -- clangd = {},
         cssls = {},
         -- gopls = {},
