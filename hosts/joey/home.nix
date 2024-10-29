@@ -19,6 +19,7 @@
 
     ../../home/langs/lua.nix
     ../../home/langs/nix.nix
+    ../../home/langs/rust.nix
     ../../home/langs/web.nix
   ];
 
