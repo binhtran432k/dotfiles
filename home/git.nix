@@ -9,7 +9,7 @@
       push.autoSetupRemote = true;
       credential.helper = [
         "cache --timeout 21600" # six hours
-        "oauth -device"
+        "oauth"
       ];
     };
   };
