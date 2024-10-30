@@ -3,5 +3,6 @@
     cargo
     rustc
     rust-analyzer
+    gcc # for cargo build
   ];
 }
