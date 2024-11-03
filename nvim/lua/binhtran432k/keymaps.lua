@@ -9,8 +9,6 @@ vim.keymap.set("n", "<C-l>", function()
   return "<C-l>"
 end, { desc = "Clear" })
 
-vim.keymap.set({"n", "i", "c"}, "<C-j>", "<C-n>", { remap = true })
-vim.keymap.set({"n", "i", "c"}, "<C-k>", "<C-p>", { remap = true })
 -- Clipboard keymaps
 vim.keymap.set("n", "<leader>y", '"+yy', { desc = "[Y]ank to clipboard" })
 vim.keymap.set({ "v" }, "<leader>y", '"+y', { desc = "[Y]ank to clipboard" })
