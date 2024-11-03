@@ -12,6 +12,9 @@ return {
     config = function()
       -- See `:help cmp`
       local cmp = require("cmp")
+      local cmp_float_window = cmp.config.window.bordered({
+        winhighlight = "CursorLine:Visual,Search:None",
+      })
       cmp.setup({
         completion = { completeopt = "menu,menuone,noinsert" },
 
@@ -55,6 +58,10 @@ return {
           { name = "snippets" },
           { name = "path" },
           { name = "buffer", group_index = 2 },
+        },
+        window = {
+          completion = cmp_float_window,
+          documentation = cmp_float_window,
         },
       })
     end,
