@@ -13,6 +13,7 @@
     ../../home/fish.nix
     ../../home/git.nix
     ../../home/gitui.nix
+    ../../home/helix.nix
     ../../home/neovim.nix
     ../../home/zoxide.nix
     ../../home/zellij.nix
