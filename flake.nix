@@ -84,6 +84,7 @@
           extraSpecialArgs = {
             inherit inputs outputs;
             pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${system};
+            pkgs-node = inputs.nixpkgs-unstable.legacyPackages.${system}.nodePackages;
           };
           modules = [./hosts/joey/home.nix];
         };

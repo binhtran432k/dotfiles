@@ -130,6 +130,10 @@ return {
         ["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" }),
       }
 
+      local root_pattern = require("lspconfig.util").root_pattern
+
+      local deno_root_pattern = root_pattern("deno.json", "deno.jsonc")
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --- @type table<string, lspconfig.Config>
@@ -137,6 +141,9 @@ return {
         biome = {},
         -- clangd = {},
         cssls = {},
+        denols = {
+          root_dir = deno_root_pattern,
+        },
         -- gopls = {},
         jsonls = {},
         html = {},
@@ -172,6 +179,14 @@ return {
 
       require("typescript-tools").setup({
         capabilities = capabilities,
+        root_dir = function(...)
+          return not deno_root_pattern(...)
+            and (
+              root_pattern("tsconfig.json", "jsconfig.json")(...)
+              or root_pattern("package.json", ".git")(...)
+              or root_pattern(".")(...)
+            )
+        end,
       })
     end,
   },

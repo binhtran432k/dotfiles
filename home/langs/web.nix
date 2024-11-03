@@ -1,16 +1,21 @@
 {
   pkgs,
   pkgs-unstable,
+  pkgs-node,
   ...
 }: {
   home.packages =
     (with pkgs; [
-      nodejs
       biome
       prettierd
-      nodePackages.vscode-langservers-extracted
     ])
     ++ (with pkgs-unstable; [
       bun
+      deno
+    ])
+    ++ (with pkgs-node; [
+      nodejs
+      vscode-langservers-extracted
+      typescript-language-server
     ]);
 }
