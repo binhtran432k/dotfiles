@@ -12,7 +12,7 @@
     ../../home/eza.nix
     ../../home/fish.nix
     ../../home/git.nix
-    ../../home/gitui.nix
+    ../../home/lazygit.nix
     ../../home/neovim.nix
     ../../home/zoxide.nix
     ../../home/zellij.nix
