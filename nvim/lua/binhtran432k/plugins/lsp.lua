@@ -25,6 +25,7 @@ return {
       -- Typescript
       "pmizio/typescript-tools.nvim",
       "nvim-lua/plenary.nvim",
+      "b0o/schemastore.nvim",
     },
     keys = {
       { "<leader>cd", vim.diagnostic.open_float, desc = "Open [C]ode [D]iagnostics" },
@@ -145,7 +146,14 @@ return {
           root_dir = deno_root_pattern,
         },
         -- gopls = {},
-        jsonls = {},
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require("schemastore").json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
         html = {},
         lua_ls = {
           -- cmd = {...},
