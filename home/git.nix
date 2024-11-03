@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.git = {
     enable = true;
     userName = "Binh Tran";
@@ -13,6 +13,8 @@
       ];
     };
   };
+
+  home.packages = [pkgs.xdg-utils];
 
   programs.git-credential-oauth.enable = true;
 }
