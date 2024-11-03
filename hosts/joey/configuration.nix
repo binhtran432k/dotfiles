@@ -13,6 +13,7 @@
   imports = [
     ./share.nix
     ../../nixos/core_pkgs.nix
+    ../../nixos/fish.nix
     ../../nixos/nix-ld.nix
   ];
 
@@ -23,7 +24,6 @@
   ];
 
   users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
 
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
