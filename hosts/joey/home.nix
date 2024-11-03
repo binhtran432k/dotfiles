@@ -41,6 +41,9 @@
       mkhome = "home-manager switch --flake ${dotPath}#binhtran432k@joey";
       mknixos = "sudo nixos-rebuild switch --flake ${dotPath}#joey --fast";
     };
+    sessionVariables = {
+      BROWSER = "/mnt/c/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe";
+    };
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
