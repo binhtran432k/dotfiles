@@ -15,13 +15,10 @@
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
     ../../nixos/nix-ld.nix
+    ../../nixos/wsl.nix
   ];
 
-  wsl.enable = true;
   wsl.defaultUser = "binhtran432k";
-  environment.systemPackages = with pkgs; [
-    win32yank # terminal clipboard for wsl
-  ];
 
   users.defaultUserShell = pkgs.fish;
 
