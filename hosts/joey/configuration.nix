@@ -3,17 +3,12 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
-{
-  inputs,
-  pkgs,
-  config,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
+    ../../nixos/flakes.nix
     ../../nixos/nix-ld.nix
     ../../nixos/wsl.nix
   ];
@@ -21,25 +16,6 @@
   wsl.defaultUser = "binhtran432k";
 
   users.defaultUserShell = pkgs.fish;
-
-  nix = let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-  in {
-    settings = {
-      # Enable flakes and new 'nix' command
-      experimental-features = "nix-command flakes";
-      # Opinionated: disable global registry
-      flake-registry = "";
-      # Workaround for https://github.com/NixOS/nix/issues/9574
-      nix-path = config.nix.nixPath;
-    };
-    # Opinionated: disable channels
-    channel.enable = false;
-
-    # Opinionated: make flake registry and nix path match flake inputs
-    registry = lib.mapAttrs (_: flake: {inherit flake;}) flakeInputs;
-    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
-  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
