@@ -1,33 +1,25 @@
 {
   config,
   pkgs,
-  pkgs-node,
-  pkgs-unstable,
   ...
 }: {
   programs.neovim = {
     enable = true;
-    package = pkgs-unstable.neovim-unwrapped;
-    extraPackages =
-      (with pkgs; [
-        ### plugins installer
-        gnumake
-        git
-        unzip
-        ### treesitter
-        tree-sitter
-        gcc
-        ### telescope
-        ripgrep
-        fd
-      ])
-      ++ (with pkgs-node; [
-        nodejs # typescript-tools
-      ])
-      ++ (with pkgs-unstable; [
-        typescript # typescript-tools
-      ])
-      ;
+    extraPackages = with pkgs; [
+      ### plugins installer
+      gnumake
+      git
+      unzip
+      ### treesitter
+      tree-sitter
+      gcc
+      ### telescope
+      ripgrep
+      fd
+      ### typescript-tools
+      nodejs
+      typescript
+    ];
   };
 
   # Make symlink for neovim configs

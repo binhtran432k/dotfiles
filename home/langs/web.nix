@@ -1,21 +1,11 @@
-{
-  pkgs,
-  pkgs-unstable,
-  pkgs-node,
-  ...
-}: {
-  home.packages =
-    (with pkgs; [
-      biome
-      prettierd
-    ])
-    ++ (with pkgs-unstable; [
-      bun
-      deno
-    ])
-    ++ (with pkgs-node; [
-      nodejs
-      vscode-langservers-extracted
-      typescript-language-server
-    ]);
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    biome
+    prettierd
+    vscode-langservers-extracted
+    typescript-language-server
+    nodejs
+    bun
+    deno
+  ];
 }
