@@ -40,7 +40,6 @@
     shellAliases = let
       dotPath = "${homeDirectory}/dotfiles";
     in {
-      mkhome = "home-manager switch --flake ${dotPath}#binhtran432k@joey";
       mknixos = "sudo nixos-rebuild switch --flake ${dotPath}#joey --fast";
     };
     sessionVariables = {
