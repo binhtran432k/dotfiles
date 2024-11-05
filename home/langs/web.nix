@@ -1,11 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    biome
-    prettierd
-    vscode-langservers-extracted
-    typescript-language-server
+    ### Package Manager
     nodejs
     bun
-    deno
+    ### Formatter
+    biome
+    prettierd
   ];
 }

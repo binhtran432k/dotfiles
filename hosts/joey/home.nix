@@ -18,9 +18,12 @@
     ../../home/zellij.nix
 
     ../../home/langs/lua.nix
+    ../../home/langs/misc.nix
     ../../home/langs/nix.nix
     ../../home/langs/rust.nix
+    ../../home/langs/toml.nix
     ../../home/langs/web.nix
+    ../../home/langs/yaml.nix
   ];
 
   # Enable home-manager and git
