@@ -31,7 +31,7 @@ local function smart_fmt(bufnr)
   if has_prettier then
     return { prettier }
   end
-  return { "biome" }
+  return { prettier }
 end
 
 return { -- Autoformat
