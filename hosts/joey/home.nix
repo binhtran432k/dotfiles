@@ -7,7 +7,6 @@
     # Modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
-    ./share.nix
     ../../home/bash.nix
     ../../home/eza.nix
     ../../home/fish.nix

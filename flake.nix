@@ -15,11 +15,27 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Neovim nightly
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay/flake-update";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # WSL
     nixos-wsl = {
       url = "github:nix-community/nixos-wsl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+  };
+
+  nixConfig = {
+    experimental-features = ["nix-command" "flakes"];
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
   outputs = {
@@ -71,21 +87,6 @@
           ./hosts/joey/configuration.nix
         ];
       };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#{username}@{hostname}'
-    homeConfigurations = {
-      "binhtran432k@joey" = let
-        system = "x86_64-linux";
-      in
-        home-manager.lib.homeManagerConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system}; # Home-manager requires 'pkgs' instance
-          extraSpecialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [./hosts/joey/home.nix];
-        };
     };
   };
 }

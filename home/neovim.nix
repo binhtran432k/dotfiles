@@ -1,10 +1,12 @@
 {
+  neovim-nightly-overlay,
   config,
   pkgs,
   ...
 }: {
   programs.neovim = {
     enable = true;
+    package = neovim-nightly-overlay.packages.${pkgs.system}.default;
     extraPackages = with pkgs; [
       ### plugins installer
       gnumake

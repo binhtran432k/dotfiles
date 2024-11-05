@@ -3,17 +3,35 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: let
+  defaultUsername = "binhtran432k";
+in {
   imports = [
-    ./share.nix
+    ../share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
     ../../nixos/flakes.nix
     ../../nixos/nix-ld.nix
     ../../nixos/wsl.nix
+
+    ### Home Manager
+    inputs.home-manager.nixosModules.home-manager
   ];
 
-  wsl.defaultUser = "binhtran432k";
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${defaultUsername} = import ./home.nix;
+    extraSpecialArgs = {
+      neovim-nightly-overlay = inputs.neovim-nightly-overlay;
+    };
+  };
+
+  wsl.defaultUser = defaultUsername;
 
   users.defaultUserShell = pkgs.fish;
 
