@@ -31,7 +31,7 @@ local function smart_fmt(bufnr)
   if has_prettier then
     return { prettier }
   end
-  return { prettier }
+  return { "biome" }
 end
 
 return { -- Autoformat
@@ -67,19 +67,19 @@ return { -- Autoformat
     --   }
     -- end,
     formatters_by_ft = {
-      lua = { "stylua" },
-      nix = { "alejandra" },
+      css = smart_fmt,
+      graphql = smart_fmt,
+      html = { prettier },
       javascript = smart_fmt,
-      typescript = smart_fmt,
       javascriptreact = smart_fmt,
-      typescriptreact = smart_fmt,
       json = smart_fmt,
       jsonc = smart_fmt,
-      css = { prettier },
-      html = { prettier },
-      yaml = { prettier },
+      lua = { "stylua" },
       markdown = { prettier },
-      graphql = { prettier },
+      nix = { "alejandra" },
+      typescript = smart_fmt,
+      typescriptreact = smart_fmt,
+      yaml = { prettier },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
     },
