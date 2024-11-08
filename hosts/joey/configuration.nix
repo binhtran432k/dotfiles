@@ -16,6 +16,7 @@ in {
     ../../nixos/fish.nix
     ../../nixos/flakes.nix
     ../../nixos/nix-ld.nix
+    ../../nixos/podman.nix
     ../../nixos/wsl.nix
 
     ### Home Manager
