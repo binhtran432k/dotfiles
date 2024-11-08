@@ -17,6 +17,7 @@
     ../../home/zellij.nix
 
     ../../home/langs/lua.nix
+    ../../home/langs/markdown.nix
     ../../home/langs/misc.nix
     ../../home/langs/nix.nix
     ../../home/langs/python.nix
