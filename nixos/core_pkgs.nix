@@ -8,5 +8,8 @@
     aria2
 
     git # used by nix flakes
+
+    ## build utils
+    gnumake
   ];
 }
