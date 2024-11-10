@@ -1,5 +1,2 @@
-require("binhtran432k.globals")
-require("binhtran432k.options")
-require("binhtran432k.keymaps")
-require("binhtran432k.autocmds")
-require("binhtran432k.core")
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
