@@ -13,6 +13,7 @@
     ../../home/git.nix
     ../../home/lazygit.nix
     ../../home/neovim.nix
+    ../../home/yazi.nix
     ../../home/zoxide.nix
     ../../home/zellij.nix
 
