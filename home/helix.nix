@@ -1,8 +1,7 @@
-{
+{config, ...}: {
   programs.helix = {
     enable = true;
-    settings = {
-      theme = "dracula";
-    };
   };
+
+  xdg.configFile."helix".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/home/helix";
 }

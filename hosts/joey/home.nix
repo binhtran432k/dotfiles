@@ -11,6 +11,7 @@
     ../../home/eza.nix
     ../../home/fish.nix
     ../../home/git.nix
+    ../../home/helix.nix
     ../../home/lazygit.nix
     ../../home/neovim.nix
     ../../home/yazi.nix
