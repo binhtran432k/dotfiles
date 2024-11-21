@@ -1,4 +1,5 @@
 return {
+  { import = "lazyvim.plugins.extras.coding.mini-surround" },
   {
     "garymjr/nvim-snippets",
     keys = function()
