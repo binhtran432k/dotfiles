@@ -87,6 +87,16 @@
           ./hosts/joey/configuration.nix
         ];
       };
+      yugi = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs outputs;
+        };
+        modules = [
+          inputs.nixos-wsl.nixosModules.default
+          ./hosts/yugi/configuration.nix
+        ];
+      };
     };
   };
 }
