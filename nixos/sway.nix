@@ -1,4 +1,10 @@
-{
+{pkgs, ...}: {
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    extraPackages = with pkgs; [swayidle libnotify wl-clipboard];
+  };
+
   security.pam.services.sway = {};
 
   security.polkit.enable = true;
