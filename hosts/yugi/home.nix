@@ -1,4 +1,4 @@
-{
+{inputs, ...}: {
   # You can import other home-manager modules here
   imports = [
     # Modules your own flake exports (from modules/home-manager):
@@ -6,6 +6,7 @@
 
     # Modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    inputs.plasma-manager.homeManagerModules.plasma-manager
 
     ../../home/bash.nix
     ../../home/brave.nix

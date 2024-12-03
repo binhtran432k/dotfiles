@@ -7,12 +7,24 @@
     # Access packages and modules from different nixpkgs revs
     # at the same time.
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'
+    # Also see the 'stable-packages' overlay at 'overlays/default.nix'
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Plasma
+    plasma-manager = {
+      url = "github:nix-community/plasma-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
 
     # Neovim nightly

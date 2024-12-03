@@ -10,16 +10,18 @@
 in {
   imports = [
     ./hardware-configuration.nix
+    ./hardware-extra.nix
+    ../../hardwares/dell-latitude-e6440.nix
 
     ../share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
     ../../nixos/flakes.nix
+    ../../nixos/kde.nix
     ../../nixos/network.nix
     ../../nixos/nix-ld.nix
     ../../nixos/podman.nix
     ../../nixos/sound.nix
-    ../../nixos/sway.nix
     ../../nixos/touchpad.nix
 
     ### Home Manager
