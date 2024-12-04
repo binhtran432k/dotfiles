@@ -63,7 +63,7 @@ system, enabling consistent behavior across both WSL and NixOS environments.
    ```
 
 4. Customize to your liking by editing the respective config files in the
-   ~/.dotfiles directory.
+   `~/dotfiles` directory.
 
 ## What's Inside?
 
