@@ -17,7 +17,6 @@ in {
     inputs.plasma-manager.homeManagerModules.plasma-manager
 
     ../../home/bash.nix
-    ../../home/brave.nix
     ../../home/eza.nix
     ../../home/fish.nix
     ../../home/git.nix
@@ -55,6 +54,9 @@ in {
     shellAliases = {
       mknixos = "sudo nixos-rebuild switch --flake ${homeDirectory}/dotfiles#yugi --fast";
     };
+    packages = with pkgs; [
+      brave
+    ];
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
