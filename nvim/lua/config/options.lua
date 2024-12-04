@@ -11,3 +11,7 @@ vim.g.markdown_fenced_languages = {
 }
 
 vim.opt.clipboard = ""
+
+vim.opt.formatexpr = ""
+
+vim.opt.spelloptions = "camel,noplainbuffer"
