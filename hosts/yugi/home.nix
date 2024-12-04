@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: let
   username = "binhtran432k";
@@ -14,7 +13,6 @@ in {
 
     # Modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
-    inputs.plasma-manager.homeManagerModules.plasma-manager
 
     ../../home/bash.nix
     ../../home/cursor.nix
@@ -25,6 +23,7 @@ in {
     ../../home/helix.nix
     ../../home/kitty.nix
     ../../home/lazygit.nix
+    ../../home/mako.nix
     ../../home/neovim.nix
     ../../home/sway.nix
     ../../home/yazi.nix
