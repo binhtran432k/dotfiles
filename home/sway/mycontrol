@@ -243,9 +243,9 @@ define_brightness_commands() {
 define_commands() {
   usage() {
     cat <<- EOF 1>&2
-    Usage: $0 <volume_commands>|<brightness_commands> [<options>] <command> [<args>]
-    Control volume/brightness and related notifications.
-    EOF
+Usage: $0 <volume_commands>|<brightness_commands> [<options>] <command> [<args>]
+Control volume/brightness and related notifications.
+EOF
     exit
   }
 

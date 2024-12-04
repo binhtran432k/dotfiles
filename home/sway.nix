@@ -15,20 +15,75 @@
     border = separator;
     separator = "#44475A";
   };
+  wmenu = rec {
+    ## define the font for dmenu to be used
+    fn = "Noto Sans 12";
+    ## background colour for unselected menu-items
+    nb = "282A36";
+    ## textcolour for unselected menu-items
+    nf = "F8F8F2";
+    ## background colour for selected menu-items
+    sb = "6272A4";
+    ## textcolour for selected menu-items
+    sf = nf;
+    ## export our variables
+    options = "-f'${fn}' -n${nf} -N${nb} -s${sf} -S${sb}";
+  };
+  commands = {
+    volume = {
+      increase = "mycontrol volume up 10";
+      decrease = "mycontrol volume down 10";
+      mute = "mycontrol volume mute";
+      mute-mic = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+    };
+    brightness = {
+      # increase = "mycontrol brightness up 10";
+      # decrease = "mycontrol brightness down 10";
+      # Because of actkbd already use it
+      increase = "mycontrol brightness get";
+      decrease = "mycontrol brightness get";
+    };
+  };
 in {
+  home.packages = with pkgs; [
+    light
+    pulseaudio
+    libnotify
+    (pkgs.writeShellScriptBin "mycontrol" (builtins.readFile ./sway/mycontrol))
+  ];
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
+    extraSessionCommands = ''
+      export NIXOS_OZONE_WL=1
+      export SDL_VIDEODRIVER=wayland
+      # needs qt5.qtwayland in systemPackages
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      # Fix for some Java AWT applications (e.g. Android Studio),
+      # use this if they aren't displayed properly:
+      export _JAVA_AWT_WM_NONREPARENTING=1
+    '';
     config = {
       modifier = modifier;
       terminal = "${pkgs.kitty}/bin/kitty";
       startup = [
+        {command = "${pkgs.mako}/bin/mako";}
+        {
+          command =
+            "${pkgs.swayidle}/bin/swayidle -w"
+            + " timeout 300 'swaylock'"
+            + " timeout 600 'swaymsg \"output * power off\"'"
+            + " resume 'swaymsg \"output * power on\"'"
+            + " before-sleep 'swaylock'";
+        }
         # { command = "fcitx5 -dr"; }
       ];
       assigns = {
-        "2" = [{class = "^Brave-browser$";}];
-        "3" = [{class = "^thunderbird$";}];
+        "2" = [{class = "^Brave-browser$";} {app_id = "brave-browser";}];
+        "3" = [{class = "^thunderbird$";} {app_id = "thunderbird";}];
       };
+      defaultWorkspace = "workspace number 1";
       output = {
         eDP-1 = {
           scale = "1.2";
@@ -55,7 +110,18 @@ in {
         };
       };
       keybindings = lib.mkOptionDefault {
-        "${modifier}+d" = "exec ${pkgs.wmenu}/bin/wmenu-run";
+        "${modifier}+d" = "exec ${pkgs.wmenu}/bin/wmenu-run ${wmenu.options}";
+
+        "Control+Up" = "exec --no-startup-id ${commands.volume.increase}";
+        "Control+Down" = "exec --no-startup-id ${commands.volume.decrease}";
+
+        "XF86AudioRaiseVolume" = "exec --no-startup-id ${commands.volume.increase}";
+        "XF86AudioLowerVolume" = "exec --no-startup-id ${commands.volume.decrease}";
+        "XF86AudioMute" = "exec --no-startup-id ${commands.volume.mute}";
+        "XF86AudioMicMute" = "exec --no-startup-id ${commands.volume.mute-mic}";
+
+        "XF86MonBrightnessUp" = "exec --no-startup-id ${commands.brightness.increase}";
+        "XF86MonBrightnessDown" = "exec --no-startup-id ${commands.brightness.decrease}";
       };
       colors = with colors; {
         inherit background;
@@ -97,7 +163,7 @@ in {
           statusCommand = "${pkgs.i3status}/bin/i3status";
           fonts = {
             names = ["monospace"];
-            size = 9.0;
+            size = 10.0;
           };
           trayOutput = "primary";
           colors = with colors; {

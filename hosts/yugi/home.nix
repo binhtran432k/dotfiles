@@ -17,9 +17,11 @@ in {
     inputs.plasma-manager.homeManagerModules.plasma-manager
 
     ../../home/bash.nix
+    ../../home/cursor.nix
     ../../home/eza.nix
     ../../home/fish.nix
     ../../home/git.nix
+    ../../home/gtk.nix
     ../../home/helix.nix
     ../../home/kitty.nix
     ../../home/lazygit.nix
@@ -56,6 +58,7 @@ in {
     };
     packages = with pkgs; [
       brave
+      thunderbird
     ];
 
     # This value determines the Home Manager release that your configuration is

@@ -29,7 +29,8 @@ keybinds clear-defaults=true {
     bind "f" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     bind "p" { ToggleFloatingPanes; SwitchToMode "normal"; }
     bind "n" { NewPane; SwitchToMode "normal"; }
-    bind "Esc" "Ctrl a" { SwitchToMode "normal"; }
+    bind "N" { NextSwapLayout; }
+    bind "Esc" "Ctrl a" "Ctrl [" { SwitchToMode "normal"; }
   }
   locked {
     bind "Alt 9" { SwitchToMode "normal"; }

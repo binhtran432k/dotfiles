@@ -2,7 +2,7 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [swayidle libnotify wl-clipboard];
+    extraPackages = with pkgs; [swaylock wl-clipboard];
   };
 
   security.pam.services.sway = {};
@@ -18,7 +18,4 @@
       value = 1;
     }
   ];
-
-  # Brightness: need "video" in user extraGroups
-  programs.light.enable = true;
 }

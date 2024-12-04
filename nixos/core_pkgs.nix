@@ -9,7 +9,8 @@
 
     git # used by nix flakes
 
-    ## build utils
+    ## misc
     gnumake
+    killall
   ];
 }

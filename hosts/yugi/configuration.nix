@@ -17,11 +17,13 @@ in {
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
     ../../nixos/flakes.nix
-    ../../nixos/kde.nix
+    ../../nixos/fonts.nix
+    ../../nixos/light.nix
     ../../nixos/network.nix
     ../../nixos/nix-ld.nix
     ../../nixos/podman.nix
     ../../nixos/sound.nix
+    ../../nixos/sway.nix
     ../../nixos/touchpad.nix
 
     ### Home Manager
