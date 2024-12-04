@@ -25,5 +25,5 @@
   };
 
   # Make symlink for neovim configs
-  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
+  xdg.configFile."nvim" = config.lib.file.mkDotfilesSymlink "nvim";
 }

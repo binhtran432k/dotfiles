@@ -1,4 +1,12 @@
-{inputs, ...}: {
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}: let
+  username = "binhtran432k";
+  homeDirectory = "/home/${username}";
+in {
   # You can import other home-manager modules here
   imports = [
     # Modules your own flake exports (from modules/home-manager):
@@ -42,13 +50,10 @@
   # Nicely reload system units when changing configs
   # systemd.user.startServices = "sd-switch";
 
-  home = rec {
-    username = "binhtran432k";
-    homeDirectory = "/home/binhtran432k";
-    shellAliases = let
-      dotPath = "${homeDirectory}/dotfiles";
-    in {
-      mknixos = "sudo nixos-rebuild switch --flake ${dotPath}#yugi --fast";
+  home = {
+    inherit username homeDirectory;
+    shellAliases = {
+      mknixos = "sudo nixos-rebuild switch --flake ${homeDirectory}/dotfiles#yugi --fast";
     };
 
     # This value determines the Home Manager release that your configuration is
@@ -59,5 +64,9 @@
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
     stateVersion = "24.05"; # Please read the comment before changing.
+  };
+  lib.file.mkDotfilesSymlink = link: {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${link}";
+    force = true;
   };
 }
