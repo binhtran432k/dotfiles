@@ -3,7 +3,7 @@
     enable = true;
   };
   home.shellAliases = {
-    zlj = "zellij attach --create main";
+    zlj = "zellij";
   };
   xdg.configFile."zellij" = config.lib.file.mkDotfilesSymlink "home/zellij";
 }
