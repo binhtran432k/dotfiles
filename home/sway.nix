@@ -30,6 +30,7 @@
     options = "-f'${fn}' -n${nf} -N${nb} -s${sf} -S${sb}";
   };
   commands = {
+    lock = "swaylock";
     volume = {
       increase = "mycontrol volume up 10";
       decrease = "mycontrol volume down 10";
@@ -126,10 +127,10 @@ in {
         {
           command =
             "${pkgs.swayidle}/bin/swayidle -w"
-            + " timeout 600 'swaylock'"
+            + " timeout 600 '${commands.lock}'"
             + " timeout 605 'swaymsg \"output * power off\"'"
             + " resume 'swaymsg \"output * power on\"'"
-            + " before-sleep 'swaylock'";
+            + " before-sleep '${commands.lock}'";
         }
         # { command = "fcitx5 -dr"; }
       ];
@@ -158,9 +159,11 @@ in {
         };
       };
       keybindings = lib.mkOptionDefault {
-        "${modifier}+s" = "layout stacking";
-        "${modifier}+w" = "layout tabbed";
+        "${modifier}+e" = null;
         "${modifier}+slash" = "layout toggle split";
+
+        "${modifier}+9" = "exec ${commands.lock}";
+        "${modifier}+Shift+9" = null;
         "${modifier}+d" = "exec ${pkgs.wmenu}/bin/wmenu-run ${wmenu.options}";
 
         "Control+Up" = "exec --no-startup-id ${commands.volume.increase}";

@@ -26,6 +26,7 @@ in {
     ../../home/mako.nix
     ../../home/neovim.nix
     ../../home/sway.nix
+    ../../home/swaylock.nix
     ../../home/yazi.nix
     ../../home/zoxide.nix
     ../../home/zellij.nix
