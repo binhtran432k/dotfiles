@@ -1,4 +1,4 @@
-{
+args @ {
   pkgs,
   lib,
   ...
@@ -15,43 +15,33 @@
     border = separator;
     separator = "#44475A";
   };
-  wmenu = rec {
-    ## define the font for dmenu to be used
-    fn = "Noto Sans 12";
-    ## background colour for unselected menu-items
-    nb = "282A36";
-    ## textcolour for unselected menu-items
-    nf = "F8F8F2";
-    ## background colour for selected menu-items
-    sb = "6272A4";
-    ## textcolour for selected menu-items
-    sf = nf;
-    ## export our variables
-    options = "-f'${fn}' -n${nf} -N${nb} -s${sf} -S${sb}";
+  packages = {
+    mycontrol = import ./sway/mycontrol.nix args;
+    mymenu = import ./sway/mymenu.nix args;
+    mypower = import ./sway/mypower.nix args;
+    myshot = import ./sway/myshot.nix args;
   };
   commands = {
-    lock = "swaylock";
+    lock = "${pkgs.swaylock}/bin/swaylock";
+    menu = "${packages.mymenu}/bin/mymenu run";
+    power = "${packages.mypower}/bin/mypower";
+    myshot = "${packages.myshot}/bin/myshot";
+    myshotfull = "${packages.myshot}/bin/myshot full";
     volume = {
-      increase = "mycontrol volume up 10";
-      decrease = "mycontrol volume down 10";
-      mute = "mycontrol volume mute";
-      mute-mic = "pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+      increase = "${packages.mycontrol}/bin/mycontrol volume up 10";
+      decrease = "${packages.mycontrol}/bin/mycontrol volume down 10";
+      mute = "${packages.mycontrol}/bin/mycontrol volume mute";
+      muteMic = "${packages.mycontrol}/bin/mycontrol volume mute_mic";
     };
     brightness = {
-      # increase = "mycontrol brightness up 10";
-      # decrease = "mycontrol brightness down 10";
+      # increase = "${packages.mycontrol}/bin/mycontrol brightness up 10";
+      # decrease = "${packages.mycontrol}/bin/mycontrol brightness down 10";
       # Because of actkbd already use it
-      increase = "mycontrol brightness get";
-      decrease = "mycontrol brightness get";
+      increase = "${packages.mycontrol}/bin/mycontrol brightness get";
+      decrease = "${packages.mycontrol}/bin/mycontrol brightness get";
     };
   };
 in {
-  home.packages = with pkgs; [
-    light
-    pulseaudio
-    libnotify
-    (pkgs.writeShellScriptBin "mycontrol" (builtins.readFile ./sway/mycontrol))
-  ];
   wayland.windowManager.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
@@ -74,6 +64,9 @@ in {
       };
       defaultWorkspace = "workspace number 1";
       output = {
+        "*" = {
+          bg = "${../assets/swaybg.png} fill";
+        };
         eDP-1 = {
           scale = "1.2";
         };
@@ -130,6 +123,7 @@ in {
             + " timeout 600 '${commands.lock}'"
             + " timeout 605 'swaymsg \"output * power off\"'"
             + " resume 'swaymsg \"output * power on\"'"
+            + " timeout 1200 'systemctl suspend'"
             + " before-sleep '${commands.lock}'";
         }
         # { command = "fcitx5 -dr"; }
@@ -164,7 +158,12 @@ in {
 
         "${modifier}+9" = "exec ${commands.lock}";
         "${modifier}+Shift+9" = null;
-        "${modifier}+d" = "exec ${pkgs.wmenu}/bin/wmenu-run ${wmenu.options}";
+
+        "${modifier}+Shift+e" = null;
+        "${modifier}+0" = "exec ${commands.power}";
+        "${modifier}+Shift+0" = null;
+
+        "${modifier}+d" = "exec ${commands.menu}";
 
         "Control+Up" = "exec --no-startup-id ${commands.volume.increase}";
         "Control+Down" = "exec --no-startup-id ${commands.volume.decrease}";
@@ -172,10 +171,13 @@ in {
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${commands.volume.increase}";
         "XF86AudioLowerVolume" = "exec --no-startup-id ${commands.volume.decrease}";
         "XF86AudioMute" = "exec --no-startup-id ${commands.volume.mute}";
-        "XF86AudioMicMute" = "exec --no-startup-id ${commands.volume.mute-mic}";
+        "XF86AudioMicMute" = "exec --no-startup-id ${commands.volume.muteMic}";
 
         "XF86MonBrightnessUp" = "exec --no-startup-id ${commands.brightness.increase}";
         "XF86MonBrightnessDown" = "exec --no-startup-id ${commands.brightness.decrease}";
+
+        "Print" = "exec ${commands.myshotfull}";
+        "${modifier}+Print" = "exec ${commands.myshot}";
       };
       colors = with colors; {
         inherit background;

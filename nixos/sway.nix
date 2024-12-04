@@ -2,7 +2,7 @@
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    extraPackages = with pkgs; [swaylock wl-clipboard];
+    extraPackages = with pkgs; [swaylock grim wl-clipboard];
   };
 
   security.pam.services.sway = {};
