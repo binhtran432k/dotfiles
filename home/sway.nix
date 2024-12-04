@@ -67,13 +67,67 @@ in {
     config = {
       modifier = modifier;
       terminal = "${pkgs.kitty}/bin/kitty";
+      fonts = {
+        names = ["monospace"];
+        size = 10.0;
+      };
+      defaultWorkspace = "workspace number 1";
+      output = {
+        eDP-1 = {
+          scale = "1.2";
+        };
+      };
+      floating = {
+        titlebar = true;
+        border = 1;
+      };
+      window = {
+        titlebar = false;
+        border = 1;
+        commands = [
+          {
+            criteria = {urgent = "latest";};
+            command = "focus";
+          }
+          {
+            criteria = {window_role = "pop-up,task_dialog,About";};
+            command = "floating enable";
+          }
+          {
+            criteria = {app_id = ".*";};
+            command = "inhibit_idle fullscreen";
+          }
+          {
+            criteria = {class = ".*";};
+            command = "inhibit_idle fullscreen";
+          }
+        ];
+      };
+      input = {
+        "type:touchpad" = {
+          dwt = "enabled";
+          tap = "enabled";
+          natural_scroll = "enabled";
+          middle_emulation = "enabled";
+        };
+        "type:keyboard" = {
+          repeat_delay = "300";
+          repeat_rate = "50";
+        };
+      };
+      gaps = {
+        inner = 14;
+        outer = -2;
+        smartGaps = true;
+        smartBorders = "on";
+      };
       startup = [
         {command = "${pkgs.mako}/bin/mako";}
         {
           command =
             "${pkgs.swayidle}/bin/swayidle -w"
-            + " timeout 300 'swaylock'"
-            + " timeout 600 'swaymsg \"output * power off\"'"
+            + " timeout 600 'swaylock'"
+            + " timeout 605 'swaymsg \"output * power off\"'"
             + " resume 'swaymsg \"output * power on\"'"
             + " before-sleep 'swaylock'";
         }
@@ -82,12 +136,6 @@ in {
       assigns = {
         "2" = [{class = "^Brave-browser$";} {app_id = "brave-browser";}];
         "3" = [{class = "^thunderbird$";} {app_id = "thunderbird";}];
-      };
-      defaultWorkspace = "workspace number 1";
-      output = {
-        eDP-1 = {
-          scale = "1.2";
-        };
       };
       modes = {
         resize = {
@@ -110,6 +158,9 @@ in {
         };
       };
       keybindings = lib.mkOptionDefault {
+        "${modifier}+s" = "layout stacking";
+        "${modifier}+w" = "layout tabbed";
+        "${modifier}+slash" = "layout toggle split";
         "${modifier}+d" = "exec ${pkgs.wmenu}/bin/wmenu-run ${wmenu.options}";
 
         "Control+Up" = "exec --no-startup-id ${commands.volume.increase}";
