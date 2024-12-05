@@ -11,5 +11,6 @@ in [
       + " timeout 1200 'systemctl suspend'"
       + " before-sleep '${commands.lock}'";
   }
+  {command = "${pkgs.wlsunset}/bin/wlsunset -t 3500 -T 5900 -l 11 -L 107";}
   # { command = "fcitx5 -dr"; }
 ]
