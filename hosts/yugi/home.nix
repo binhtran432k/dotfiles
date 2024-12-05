@@ -65,6 +65,8 @@ in {
       brave
       # Mail
       thunderbird
+      # Learning
+      exercism
     ];
 
     # This value determines the Home Manager release that your configuration is
