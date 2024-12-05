@@ -21,6 +21,7 @@ in {
     ../../home/git.nix
     ../../home/gtk.nix
     ../../home/helix.nix
+    ../../home/i3status.nix
     ../../home/kitty.nix
     ../../home/lazygit.nix
     ../../home/mako.nix
