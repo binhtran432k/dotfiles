@@ -14,7 +14,7 @@ in {
     ../share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
-    ../../nixos/flakes.nix
+    ../../nixos/nix.nix
     ../../nixos/nix-ld.nix
     ../../nixos/podman.nix
     ../../nixos/wsl.nix

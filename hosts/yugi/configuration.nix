@@ -16,7 +16,7 @@ in {
     ../share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/fish.nix
-    ../../nixos/flakes.nix
+    ../../nixos/nix.nix
     ../../nixos/fonts.nix
     ../../nixos/light.nix
     ../../nixos/network.nix
