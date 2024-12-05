@@ -32,15 +32,15 @@ in {
     ../../home/zoxide.nix
     ../../home/zellij.nix
 
-    ../../home/langs/lua.nix
-    ../../home/langs/markdown.nix
-    ../../home/langs/misc.nix
-    ../../home/langs/nix.nix
-    ../../home/langs/python.nix
-    ../../home/langs/rust.nix
-    ../../home/langs/toml.nix
-    ../../home/langs/web.nix
-    ../../home/langs/yaml.nix
+    ../../home/dev/lua.nix
+    ../../home/dev/markdown.nix
+    ../../home/dev/misc.nix
+    ../../home/dev/nix.nix
+    ../../home/dev/python.nix
+    ../../home/dev/rust.nix
+    ../../home/dev/toml.nix
+    ../../home/dev/web.nix
+    ../../home/dev/yaml.nix
   ];
 
   # Enable home-manager and git
@@ -57,8 +57,13 @@ in {
     shellAliases = {
       mknixos = "sudo nixos-rebuild switch --flake ${homeDirectory}/dotfiles#yugi --fast";
     };
+    sessionVariables = {
+      BROWSER = "${pkgs.brave}/bin/brave";
+    };
     packages = with pkgs; [
+      # Browser
       brave
+      # Mail
       thunderbird
     ];
 
