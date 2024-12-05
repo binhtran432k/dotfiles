@@ -15,6 +15,10 @@
       # Workaround for https://github.com/NixOS/nix/issues/9574
       nix-path = config.nix.nixPath;
     };
+    optimise = {
+      automatic = true;
+      dates = ["03:45"]; # Optional; allows customizing optimisation schedule
+    };
     gc = {
       automatic = true;
       dates = "weekly";

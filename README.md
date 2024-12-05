@@ -77,6 +77,14 @@ This dotfiles repository includes configurations for:
 - Email client
 - Various other utilities and tools
 
+## Cheat Sheets
+
+- `mknixos`: To rebuild and apply dotfiles in any location
+- `nix-store --optimise`: To optimizing the store for a long time
+- `nix-collect-garbage` or `nix-store --gc`: To run garbage collection
+- `sudo nix-collect-garbage -d`: To remove all except current generation
+- `nix-collect-garbage -d`: To remove all user-specific except current generation
+
 ## Contributing
 
 While this is a personal project, feel free to explore and suggest improvements
