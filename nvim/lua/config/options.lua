@@ -4,7 +4,7 @@
 
 vim.g.autoformat = false
 
-vim.g.root_spec = { { ".git", "lua", "Makefile" }, "lsp", "cwd" }
+vim.g.root_spec = { { ".git", "lua", "Makefile", "node_modules" }, "lsp", "cwd" }
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
