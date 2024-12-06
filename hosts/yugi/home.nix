@@ -26,6 +26,7 @@ in {
     ../../home/lazygit.nix
     ../../home/mako.nix
     ../../home/neovim.nix
+    ../../home/starship.nix
     ../../home/sway.nix
     ../../home/swaylock.nix
     ../../home/yazi.nix
