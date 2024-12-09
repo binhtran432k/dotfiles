@@ -18,9 +18,9 @@ with inputs.nixos-hardware.nixosModules; {
 
   # Fix suspend not working
   powerManagement.powerDownCommands = ''
-    echo GLAN | tee /proc/acpi/wakeup
+    grep GLAN.*enable /proc/acpi/wakeup && echo GLAN | tee /proc/acpi/wakeup
   '';
   powerManagement.resumeCommands = ''
-    echo GLAN | tee /proc/acpi/wakeup
+    grep GLAN.*disable /proc/acpi/wakeup && echo GLAN | tee /proc/acpi/wakeup
   '';
 }
