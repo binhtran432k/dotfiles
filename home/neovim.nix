@@ -17,6 +17,7 @@
       gcc
       ### telescope
       ripgrep
+      fzf
       fd
       ### typescript-tools
       nodejs
