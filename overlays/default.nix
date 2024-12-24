@@ -10,6 +10,9 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
+    brave = prev.brave.override {
+      commandLineArgs = "--gtk-version=4";
+    };
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
