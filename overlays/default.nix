@@ -10,7 +10,6 @@
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
-    bun = import ./bun.nix {inherit final prev;};
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
