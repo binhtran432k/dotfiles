@@ -18,6 +18,7 @@ in {
     ../../home/cursor.nix
     ../../home/eza.nix
     ../../home/fish.nix
+    ../../home/fzf.nix
     ../../home/git.nix
     ../../home/gtk.nix
     ../../home/helix.nix
