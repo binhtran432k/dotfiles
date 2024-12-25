@@ -18,6 +18,7 @@ in {
     ../../nixos/fish.nix
     ../../nixos/nix.nix
     ../../nixos/fonts.nix
+    ../../nixos/input-method.nix
     ../../nixos/light.nix
     ../../nixos/network.nix
     ../../nixos/nix-ld.nix

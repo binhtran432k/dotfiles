@@ -12,5 +12,6 @@ in [
       + " before-sleep '${commands.lock}'";
   }
   {command = "${pkgs.wlsunset}/bin/wlsunset -t 3500 -T 5900 -l 11 -L 107";}
-  # { command = "fcitx5 -dr"; }
+  {command = "fcitx5 -dr";}
+  {command = "fcitx5-remote -r";}
 ]
