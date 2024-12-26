@@ -36,6 +36,7 @@ in {
     ../../home/zellij.nix
 
     ../../home/dev/clang.nix
+    ../../home/dev/go.nix
     ../../home/dev/lua.nix
     ../../home/dev/markdown.nix
     ../../home/dev/misc.nix
