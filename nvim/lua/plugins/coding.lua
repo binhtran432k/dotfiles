@@ -1,31 +1,22 @@
 return {
-  { import = "lazyvim.plugins.extras.coding.mini-surround" },
   {
-    "garymjr/nvim-snippets",
-    keys = function()
-      return {
-        {
-          "<C-l>",
-          function()
-            return vim.snippet.active({ direction = 1 }) and "<cmd>lua vim.snippet.jump(1)<cr>" or "<Tab>"
-          end,
-          expr = true,
-          silent = true,
-          mode = { "i", "s" },
-        },
-        {
-          "<C-h>",
-          function()
-            return vim.snippet.active({ direction = -1 }) and "<cmd>lua vim.snippet.jump(-1)<cr>" or "<S-Tab>"
-          end,
-          expr = true,
-          silent = true,
-          mode = { "i", "s" },
-        },
-      }
-    end,
+    "blink.cmp",
     opts = {
-      extended_filetypes = { typescript = { "javascript" } },
+      completion = {
+        accept = { auto_brackets = { enabled = false } },
+      },
+      keymap = {
+        preset = "default",
+      },
+      sources = {
+        providers = {
+          snippets = {
+            opts = {
+              extended_filetypes = { typescript = { "javascript" }, typescriptreact = { "javascriptreact" } },
+            },
+          },
+        },
+      },
     },
   },
 }

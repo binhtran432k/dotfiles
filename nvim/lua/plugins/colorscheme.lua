@@ -17,5 +17,5 @@ return {
       end,
     },
   },
-  { "catppuccin/nvim", enabled = false },
+  { "catppuccin", enabled = false },
 }

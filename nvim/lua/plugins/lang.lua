@@ -1,48 +1,19 @@
-local prettier = "prettierd"
-
-local function smart_fmt(bufnr)
-  local has_biome_lsp = vim.lsp.get_clients({
-    bufnr = bufnr,
-    name = "biome",
-  })[1]
-  if has_biome_lsp then
-    return { "biome" }
-  end
-  local has_denols = vim.lsp.get_clients({
-    bufnr = bufnr,
-    name = "denols",
-  })[1]
-  if has_denols then
-    return {}
-  end
-  local has_prettier = vim.fs.find({
-    -- https://prettier.io/docs/en/configuration.html
-    ".prettierrc",
-    ".prettierrc.json",
-    ".prettierrc.yml",
-    ".prettierrc.yaml",
-    ".prettierrc.json5",
-    ".prettierrc.js",
-    ".prettierrc.cjs",
-    ".prettierrc.toml",
-    "prettier.config.js",
-    "prettier.config.cjs",
-  }, { upward = true })[1]
-  if has_prettier then
-    return { prettier }
-  end
-  return { "biome" }
-end
-
 return {
-  { import = "lazyvim.plugins.extras.lang.json" },
-  { import = "lazyvim.plugins.extras.lang.markdown" },
-  { import = "lazyvim.plugins.extras.lang.nix" },
-  { import = "lazyvim.plugins.extras.lang.rust" },
-  { import = "lazyvim.plugins.extras.lang.tailwind" },
-  { import = "lazyvim.plugins.extras.lang.toml" },
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-  { import = "lazyvim.plugins.extras.lang.yaml" },
+  {
+    "tree-sitter-grammars/tree-sitter-test",
+    build = "mkdir parser && tree-sitter build -o parser/test.so",
+    ft = "test",
+    init = function()
+      -- toggle full-width rules for test separators
+      vim.g.tstest_fullwidth_rules = false
+      -- set the highlight group of the rules
+      vim.g.tstest_rule_hlgroup = "FoldColumn"
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = { ensure_installed = { "css", "html" } },
+  },
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -56,14 +27,11 @@ return {
               "tailwind.config.js",
               "tailwind.config.cjs",
               "tailwind.config.mjs",
-              "tailwind.config.ts",
-              "postcss.config.js",
-              "postcss.config.cjs",
-              "postcss.config.mjs",
-              "postcss.config.ts"
+              "tailwind.config.ts"
             )(fname)
           end,
         },
+        unocss = {},
       },
     },
   },
@@ -71,26 +39,22 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        css = smart_fmt,
-        graphql = smart_fmt,
-        html = { prettier },
-        javascript = smart_fmt,
-        javascriptreact = smart_fmt,
-        json = smart_fmt,
-        jsonc = smart_fmt,
-        markdown = { prettier },
         nix = { "alejandra" },
-        typescript = smart_fmt,
-        typescriptreact = smart_fmt,
-        yaml = { prettier },
       },
     },
   },
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      for _, server_opts in pairs(opts.servers) do
-        if type(server_opts) == "table" then
+      local ensure_installed = {
+        astro = true,
+        tailwindcss = true,
+        unocss = true,
+        volar = true,
+        vtsls = true,
+      }
+      for server, server_opts in pairs(opts.servers) do
+        if type(server_opts) == "table" and not ensure_installed[server] then
           server_opts.mason = false
         end
       end
@@ -99,7 +63,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
-      opts.ensure_installed = {}
+      opts.ensure_installed = { "markdown-toc" }
     end,
   },
 }
