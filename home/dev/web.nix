@@ -1,13 +1,12 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ### Package Manager
-    nodejs
-    pnpm
     bun
-    ### Language Servers
-    tailwindcss-language-server
-    ### Formatter
+    nodejs
+    # LSP
+    vscode-langservers-extracted
+    # Formatter
     biome
-    prettierd
+    nodePackages.prettier
   ];
 }
