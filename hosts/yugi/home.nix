@@ -66,6 +66,7 @@ in {
     };
     sessionVariables = {
       BROWSER = "${pkgs.brave}/bin/brave";
+      DOTNET_SYSTEM_GLOBALIZATION_INVARIANT = 1;
     };
     packages = with pkgs; [
       # Browser
