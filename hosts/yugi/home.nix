@@ -44,6 +44,7 @@ in {
     ../../home/dev/python.nix
     ../../home/dev/rust.nix
     ../../home/dev/toml.nix
+    ../../home/dev/tree-sitter.nix
     ../../home/dev/web.nix
     ../../home/dev/yaml.nix
   ];
