@@ -75,6 +75,13 @@ in {
       thunderbird
       # Learning
       exercism
+      # Office
+      onlyoffice-bin
+      # Media
+      mpv
+      vimiv-qt
+      # Utils
+      gimp
     ];
 
     # This value determines the Home Manager release that your configuration is
