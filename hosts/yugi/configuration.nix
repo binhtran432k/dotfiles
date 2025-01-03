@@ -15,12 +15,13 @@ in {
 
     ../share.nix
     ../../nixos/core_pkgs.nix
+    ../../nixos/envfs.nix
     ../../nixos/fish.nix
-    ../../nixos/nix.nix
     ../../nixos/fonts.nix
     ../../nixos/input-method.nix
     ../../nixos/light.nix
     ../../nixos/network.nix
+    ../../nixos/nix.nix
     ../../nixos/nix-ld.nix
     ../../nixos/podman.nix
     ../../nixos/sound.nix
