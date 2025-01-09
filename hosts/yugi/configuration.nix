@@ -16,6 +16,7 @@ in {
     ../share.nix
     ../../nixos/core_pkgs.nix
     ../../nixos/envfs.nix
+    ../../nixos/eye-strain.nix
     ../../nixos/fish.nix
     ../../nixos/fonts.nix
     ../../nixos/input-method.nix
