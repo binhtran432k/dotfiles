@@ -27,7 +27,7 @@ in {
       output = import ./sway/output.nix;
       floating = {
         titlebar = true;
-        border = 1;
+        border = 2;
       };
       window = import ./sway/window.nix;
       input = import ./sway/input.nix;
