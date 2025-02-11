@@ -1,6 +1,8 @@
 {config, ...}: {
   programs.zellij = {
     enable = true;
+    enableBashIntegration = false;
+    enableFishIntegration = false;
   };
   home.shellAliases = {
     zlj = "zellij";
