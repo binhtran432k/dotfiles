@@ -4,15 +4,25 @@
 
 vim.g.autoformat = false
 
-vim.g.root_spec = { { ".git", "lua", "Makefile", "package.json", "go.mod", "Cargo.toml" }, "lsp", "cwd" }
+vim.g.root_spec = {
+  {
+    ".git",
+    "lua",
+    "Makefile",
+    "package.json",
+    "go.mod",
+    "Cargo.toml",
+    "build.zig.zon",
+  },
+  "lsp",
+  "cwd",
+}
 
 vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
 
 vim.opt.clipboard = ""
-
-vim.opt.formatexpr = ""
 
 vim.opt.spelloptions = "camel,noplainbuffer"
 
@@ -25,6 +35,5 @@ vim.filetype.add({
     [".*/tree-sitter-*/test/corpus/.*\\.txt"] = "test",
   },
 })
-
 
 vim.g.lazyvim_python_lsp = "basedpyright"
