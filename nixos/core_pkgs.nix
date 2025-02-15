@@ -12,5 +12,7 @@
     ## misc
     gnumake
     killall
+    zip
+    unzip
   ];
 }
