@@ -1,9 +1,13 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    cargo
-    rustc
-    rust-analyzer
-    rustfmt
+    rustup
+    # cargo
+    # rustc
+    # rust-analyzer
+    # rustfmt
     gcc # for cargo build
+  ];
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
   ];
 }
