@@ -1,10 +1,13 @@
 return {
   {
     "snacks.nvim",
+    ---@module 'snacks'
+    ---@type snacks.Config
     opts = {
       scroll = {
         enabled = false,
       },
+      indent = { animate = { enabled = false } },
     },
   },
   {
