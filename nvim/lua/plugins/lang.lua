@@ -3,7 +3,7 @@ return {
   { import = "plugins.lang.gherkin" },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { ensure_installed = { "css", "html" } },
+    opts = { ensure_installed = { "css", "html", "make" } },
   },
   {
     "neovim/nvim-lspconfig",
