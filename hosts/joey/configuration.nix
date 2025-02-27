@@ -28,7 +28,7 @@ in {
     useUserPackages = true;
     users.${defaultUsername} = import ./home.nix;
     extraSpecialArgs = {
-      neovim-nightly-overlay = inputs.neovim-nightly-overlay;
+      inherit inputs;
     };
   };
 

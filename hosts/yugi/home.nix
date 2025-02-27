@@ -13,6 +13,7 @@ in {
 
     # Modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    ../share-home.nix
 
     ../../home/bash.nix
     ../../home/cursor.nix
@@ -92,9 +93,5 @@ in {
     # want to update the value, then make sure to first check the Home Manager
     # release notes.
     stateVersion = "24.05"; # Please read the comment before changing.
-  };
-  lib.file.mkDotfilesSymlink = link: {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${link}";
-    force = true;
   };
 }
