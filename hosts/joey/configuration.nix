@@ -34,6 +34,9 @@ in {
 
   wsl.defaultUser = defaultUsername;
 
+  # Set your time zone.
+  time.timeZone = "Asia/Ho_Chi_Minh";
+
   users.defaultUserShell = pkgs.fish;
 
   # This value determines the NixOS release from which the default
