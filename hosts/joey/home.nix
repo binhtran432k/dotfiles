@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   # You can import other home-manager modules here
   imports = [
     # Modules your own flake exports (from modules/home-manager):
@@ -54,6 +54,9 @@
     sessionVariables = {
       BROWSER = "/mnt/c/Program Files/BraveSoftware/Brave-Browser/Application/brave.exe";
     };
+    packages = with pkgs; [
+      exercism
+    ];
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
