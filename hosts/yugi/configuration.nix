@@ -37,7 +37,7 @@ in {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "yugi-binhtran432k";
+  networking.hostName = "binhtran432k-yugi";
 
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
