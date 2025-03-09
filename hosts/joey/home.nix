@@ -33,6 +33,7 @@
     ../../home/dev/toml.nix
     ../../home/dev/web.nix
     ../../home/dev/yaml.nix
+    ../../home/dev/zig.nix
   ];
 
   # Enable home-manager and git
