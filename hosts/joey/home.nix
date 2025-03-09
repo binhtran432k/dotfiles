@@ -23,6 +23,7 @@
     ../../home/zoxide.nix
     ../../home/zellij.nix
 
+    ../../home/dev/dotnet.nix
     ../../home/dev/lua.nix
     ../../home/dev/markdown.nix
     ../../home/dev/misc.nix

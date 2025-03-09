@@ -13,6 +13,7 @@ vim.g.root_spec = {
     "go.mod",
     "Cargo.toml",
     "build.zig.zon",
+    "*.csproj",
   },
   "lsp",
   "cwd",
@@ -37,3 +38,5 @@ vim.filetype.add({
 })
 
 vim.g.lazyvim_python_lsp = "basedpyright"
+
+vim.treesitter.language.register("c_sharp", "csharp")

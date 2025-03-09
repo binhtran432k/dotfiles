@@ -12,6 +12,9 @@ return {
         biome = {},
         cssls = {},
         html = {},
+        omnisharp = {
+          cmd = { "OmniSharp" },
+        },
         tailwindcss = {
           root_dir = function(fname)
             return require("lspconfig.util").root_pattern(
