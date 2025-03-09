@@ -11,6 +11,7 @@
     wasm-pack
     wasm-bindgen-cli
     binaryen
+    wabt
   ];
   home.sessionPath = [
     "$HOME/.cargo/bin"
