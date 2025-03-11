@@ -37,9 +37,11 @@ icfg: ucfg
 	ln -sf ~/dotfiles/nvim ~/.config/nvim
 	ln -sf ~/dotfiles/_config/fish ~/.config/fish
 	ln -sf ~/dotfiles/_config/zellij ~/.config/zellij
+	ln -sf ~/dotfiles/_gitconfig ~/.gitconfig
 
 .PHONY: ucfg
 ucfg:
 	rm -rf ~/.config/nvim
 	rm -rf ~/.config/fish
 	rm -rf ~/.config/zellij
+	rm -f ~/.gitconfig
