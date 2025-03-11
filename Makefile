@@ -18,6 +18,10 @@ paru:
 	git clone --depth 1 https://aur.archlinux.org/paru-bin.git
 	cd paru-bin &&  makepkg -si
 
+.PHONY: bun
+bun:
+	curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+
 .PHONY: wsl
 wsl:
 	rm -rf win32yank
