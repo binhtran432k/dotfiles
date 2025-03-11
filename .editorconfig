@@ -3,3 +3,6 @@ root = true
 [*.{nix,lua,scm}]
 indent_style = space
 indent_size = 2
+
+[*.{fish}]
+indent_size = 4
