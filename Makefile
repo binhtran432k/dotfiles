@@ -29,3 +29,16 @@ wsl:
 	unzip win32yank -d win32yank
 	rm -f win32yank.zip
 	chmod +x win32yank/win32yank.exe
+
+.PHONY: icfg
+icfg: ucfg
+	mkdir -p ~/.config
+	ln -sf ~/dotfiles/nvim ~/.config/nvim
+	ln -sf ~/dotfiles/_config/fish ~/.config/fish
+	ln -sf ~/dotfiles/_config/zellij ~/.config/zellij
+
+.PHONY: ucfg
+ucfg:
+	rm -rf ~/.config/nvim
+	rm -rf ~/.config/fish
+	rm -rf ~/.config/zellij
