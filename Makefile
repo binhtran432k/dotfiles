@@ -17,3 +17,11 @@ paru:
 	rm -rf paru-bin
 	git clone --depth 1 https://aur.archlinux.org/paru-bin.git
 	cd paru-bin &&  makepkg -si
+
+.PHONY: wsl
+wsl:
+	rm -rf win32yank
+	wget -O win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+	unzip win32yank -d win32yank
+	rm -f win32yank.zip
+	chmod +x win32yank/win32yank.exe
