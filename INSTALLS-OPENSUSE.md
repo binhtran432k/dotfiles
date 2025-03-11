@@ -9,7 +9,7 @@ zypper install make gcc tar
 ## Utilities
 
 ```sh
-zypper install curl eza lazygit yazi fd fzf ripgrep bat delta
+zypper install curl eza lazygit yazi fd fzf ripgrep bat git-delta
 ```
 
 ## Editor
