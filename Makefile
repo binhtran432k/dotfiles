@@ -1,7 +1,7 @@
 .PHONY: joey
 joey: icfg
 	rm -f ~/.profile
-	ln -sf ~/dotfiles/profiles/joey.profile.sh ~/.profile
+	ln -sf ~/dotfiles/profiles/joey.profile ~/.profile
 
 .PHONY: yugi
 yugi:
@@ -22,6 +22,12 @@ paru:
 .PHONY: bun
 bun:
 	curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
+
+.PHONY: dotnet
+dotnet:
+	rm -f ./dotnet-install.sh
+	wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
+	chmod +x ./dotnet-install.sh
 
 .PHONY: wsl
 wsl:
