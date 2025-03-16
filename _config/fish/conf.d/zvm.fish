@@ -1,4 +1,4 @@
-export ZVM_INSTALL="$HOME/.zvm"
-if test -d $ZVM_INSTALL
-    export PATH="$ZVM_INSTALL/bin:$PATH"
+export ZVM_ROOT="$HOME/.zvm"
+if test -d $ZVM_ROOT
+    export PATH="$ZVM_ROOT/bin:$PATH"
 end

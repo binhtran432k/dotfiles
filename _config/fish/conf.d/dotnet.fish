@@ -1,4 +1,4 @@
-export DOTNET_INSTALL="$HOME/.dotnet"
-if test -d $DOTNET_INSTALL
-    export PATH="$DOTNET_INSTALL:$PATH"
+export DOTNET_ROOT="$HOME/.dotnet"
+if test -d $DOTNET_ROOT
+    export PATH="$DOTNET_ROOT:$DOTNET_ROOT/tools:$PATH"
 end
