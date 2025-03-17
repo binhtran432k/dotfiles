@@ -4,10 +4,9 @@ return {
     ---@module 'snacks'
     ---@type snacks.Config
     opts = {
-      scroll = {
-        enabled = false,
-      },
+      scroll = { enabled = false },
       indent = { animate = { enabled = false } },
+      picker = { sources = { files = { hidden = true }, explorer = { hidden = true } } },
     },
   },
   {
