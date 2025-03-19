@@ -1,11 +1,15 @@
 .PHONY: joey
-joey: icfg
-	rm -f ~/.profile
-	ln -sf ~/dotfiles/profiles/joey.profile ~/.profile
+joey: joey-wezterm
+	sudo nixos-rebuild switch --flake ".#joey"
 
 .PHONY: yugi
 yugi:
 	sudo nixos-rebuild switch --flake ".#yugi"
+
+.PHONY: joey2
+joey2: icfg
+	rm -f ~/.profile
+	ln -sf ~/dotfiles/profiles/joey.profile ~/.profile
 
 .PHONY: joey-wezterm
 joey-wezterm:
