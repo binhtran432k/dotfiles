@@ -9,4 +9,7 @@
     biome
     nodePackages.prettier
   ];
+  home.sessionPath = [
+    "$HOME/.bun/bin"
+  ];
 }
