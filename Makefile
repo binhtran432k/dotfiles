@@ -7,7 +7,7 @@ yugi:
 	sudo nixos-rebuild switch --flake ".#yugi"
 
 .PHONY: joey2
-joey2: icfg
+joey2:
 	rm -f ~/.profile
 	ln -sf ~/dotfiles/profiles/joey.profile ~/.profile
 
@@ -27,31 +27,21 @@ paru:
 bun:
 	curl -fsSL https://bun.sh/install | bash # for macOS, Linux, and WSL
 
+.PHONY: fnm
+fnm:
+	curl -fsSL https://fnm.vercel.app/install | bash
+
+.PHONY: zvm
+zvm:
+	curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
+
+.PHONY: rustup
+rustup:
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path
+
 .PHONY: dotnet
 dotnet:
+	# Dependencies: icu
 	rm -f ./dotnet-install.sh
 	wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	chmod +x ./dotnet-install.sh
-
-.PHONY: wsl
-wsl:
-	rm -rf win32yank
-	wget -O win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
-	unzip win32yank -d win32yank
-	rm -f win32yank.zip
-	chmod +x win32yank/win32yank.exe
-
-.PHONY: icfg
-icfg: ucfg
-	mkdir -p ~/.config
-	ln -sf ~/dotfiles/nvim ~/.config/nvim
-	ln -sf ~/dotfiles/_config/fish ~/.config/fish
-	ln -sf ~/dotfiles/_config/zellij ~/.config/zellij
-	ln -sf ~/dotfiles/_gitconfig ~/.gitconfig
-
-.PHONY: ucfg
-ucfg:
-	rm -rf ~/.config/nvim
-	rm -rf ~/.config/fish
-	rm -rf ~/.config/zellij
-	rm -f ~/.gitconfig
