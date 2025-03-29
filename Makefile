@@ -31,6 +31,10 @@ bun:
 fnm:
 	curl -fsSL https://fnm.vercel.app/install | bash
 
+.PHONY: pnpm
+pnpm:
+	curl -fsSL https://get.pnpm.io/install.sh | sh -
+
 .PHONY: zvm
 zvm:
 	curl https://raw.githubusercontent.com/tristanisham/zvm/master/install.sh | bash
