@@ -14,9 +14,7 @@ return {
         html = {},
         unocss = {
           root_dir = function(fname)
-            return require("lspconfig.util").root_pattern(
-              "uno.config.ts"
-            )(fname)
+            return require("lspconfig.util").root_pattern("uno.config.ts")(fname)
           end,
         },
       },
