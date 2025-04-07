@@ -24,6 +24,14 @@ install-fix-sleep: uninstall-fix-sleep
 uninstall-fix-sleep:
 	rm -rf /lib/systemd/system-sleep
 
+.PHONY: install-xinput uninstall-xinput
+install-xinput: uninstall-xinput
+	cp -f ./assets/x11/00-keyboard.conf /etc/X11/xorg.conf.d/00-keyboard.conf
+	cp -f ./assets/x11/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+uninstall-xinput:
+	rm -f /etc/X11/xorg.conf.d/00-keyboard.conf
+	rm -f /etc/X11/xorg.conf.d/30-touchpad.conf
+
 .PHONY: paru
 paru:
 	# Dependencies: base-devel
