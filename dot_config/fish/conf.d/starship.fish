@@ -1,3 +1,5 @@
 if type -q starship
-    starship init fish | source
+    if [ "$TERM" != "linux"  ]
+        starship init fish | source
+    end
 end
