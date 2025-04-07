@@ -1,0 +1,42 @@
+arch-linux:
+  # pacman -S --needed ...
+  pacman:
+    ### Build Tool
+    - base-devel
+    - zip
+    - unzip
+    - ntfs-3g
+    ### Desktop
+    - xorg
+    - xorg-xinit
+    - xdg-utils
+    - dmenu
+    - dunst
+    - pipewire-alsa
+    - pipewire-pulse
+    ### Theme
+    - breeze-gtk
+    ### Utility
+    - eza
+    - lazygit
+    - yazi
+    - zoxide
+    - zellij
+    - fd
+    - fzf
+    - ripgrep
+    - bat
+    - less
+    - git-delta
+    ### Editor
+    - neovim
+    - helix
+    ### Tools
+    - mpv # Media Viewer
+    - zathura # PDF Viewer
+  # paru -S --needed ...
+  paru:
+    ### Theme
+    - xcursor-breeze
+    ### Tools
+    - brave-bin

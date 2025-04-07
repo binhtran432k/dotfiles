@@ -1,7 +1,6 @@
 assets/
 binhos/
 paru-bin/
-INSTALLS-*.md
 README.md
 Makefile
 LICENSE
