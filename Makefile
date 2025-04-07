@@ -16,6 +16,14 @@ joey-wezterm:
 	sudo mkdir -p /mnt/c/Users/binhtran432k/.config
 	sudo cp -rf ./home/wezterm /mnt/c/Users/binhtran432k/.config
 
+.PHONY: install-fix-sleep uninstall-fix-sleep
+install-fix-sleep: uninstall-fix-sleep
+	mkdir -p /lib/systemd/system-sleep
+	cp -f ./assets/systemd/xhci.sh /lib/systemd/system-sleep/xhci.sh
+	chmod u+x /lib/systemd/system-sleep/xhci.sh
+uninstall-fix-sleep:
+	rm -rf /lib/systemd/system-sleep
+
 .PHONY: paru
 paru:
 	# Dependencies: base-devel
