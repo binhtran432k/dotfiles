@@ -7,15 +7,27 @@ arch-linux:
     - unzip
     - ntfs-3g
     ### Desktop
-    - xorg
-    - xorg-xinit
+    - river
+    - wlr-randr
+    - kanshi
+    - gammastep
+    - waybar
+    - playerctl
+    - pavucontrol
+    - swayidle
+    - mako
+    - fuzzel
+    - xorg-wayland
     - xdg-utils
-    - dmenu
-    - dunst
-    - pipewire-alsa
+    - libnotify
+    - brightnessctl
     - pipewire-pulse
+    - wl-clipboard
+    - grim
+    - slurp
     ### Theme
-    - breeze-gtk
+    - gnome-themes-extra
+    - kvantum
     ### Utility
     - eza
     - lazygit
@@ -36,7 +48,8 @@ arch-linux:
     - zathura # PDF Viewer
   # paru -S --needed ...
   paru:
-    ### Theme
-    - xcursor-breeze
     ### Tools
     - brave-bin
+    - wlopm
+    - chayang
+    - lswt
