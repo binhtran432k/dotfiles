@@ -1,21 +1,3 @@
-.PHONY: joey
-joey: joey-wezterm
-	sudo nixos-rebuild switch --flake ".#joey"
-
-.PHONY: yugi
-yugi:
-	sudo nixos-rebuild switch --flake ".#yugi"
-
-.PHONY: joey2
-joey2:
-	rm -f ~/.profile
-	ln -sf ~/dotfiles/profiles/joey.profile ~/.profile
-
-.PHONY: joey-wezterm
-joey-wezterm:
-	sudo mkdir -p /mnt/c/Users/binhtran432k/.config
-	sudo cp -rf ./home/wezterm /mnt/c/Users/binhtran432k/.config
-
 .PHONY: install-fix-sleep uninstall-fix-sleep
 install-fix-sleep: uninstall-fix-sleep
 	mkdir -p /lib/systemd/system-sleep
