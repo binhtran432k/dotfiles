@@ -1,0 +1,10 @@
+[general]
+import = ["~/.config/alacritty/themes/dracula.toml"]
+
+[window]
+decorations = "none"
+
+[keyboard]
+bindings = [
+  { key = "LBracket", mods = "Control", chars = "\u001b" },
+]
