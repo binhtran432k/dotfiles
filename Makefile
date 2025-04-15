@@ -1,3 +1,9 @@
+.PHONY: load-dconf dump-dconf
+dump-dconf:
+	dconf dump / > ~/.config/dconf/dconf-settings.ini
+load-dconf:
+	dconf load / < ~/.config/dconf/dconf-settings.ini
+
 .PHONY: install-fix-sleep uninstall-fix-sleep
 install-fix-sleep: uninstall-fix-sleep
 	mkdir -p /lib/systemd/system-sleep
