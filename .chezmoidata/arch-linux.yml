@@ -28,6 +28,11 @@ arch-linux:
     ### Theme
     - gnome-themes-extra
     - kvantum
+    ### Font
+    - noto-fonts
+    - noto-fonts-cjk
+    - noto-fonts-emoji
+    - ttf-monaspace-variable
     ### Utility
     - eza
     - lazygit

@@ -43,7 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 theme = Dracula
-font-family = Maple Mono
+font-family = monospace
 
 # Hack Esc Key
 keybind = ctrl+left_bracket=text:\x1b
