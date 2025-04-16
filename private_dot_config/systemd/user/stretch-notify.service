@@ -1,0 +1,8 @@
+[Unit]
+Description=Send notification to take a break and stretch.
+
+[Service]
+ExecStart=/usr/bin/notify-send 'Break' 'Stretch!' -u critical
+
+[Install]
+WantedBy=default.target

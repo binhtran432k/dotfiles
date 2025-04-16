@@ -1,0 +1,8 @@
+[Unit]
+Description=Send notification to take 20sec break for preventing eye strain.
+
+[Service]
+ExecStart=/usr/bin/notify-send 'Break' 'Eye strain break 20 secs!' -u critical
+
+[Install]
+WantedBy=default.target
