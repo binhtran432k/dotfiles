@@ -7,8 +7,13 @@ arch-linux:
     - unzip
     - ntfs-3g
     ### Desktop
-    - river
-    - wlr-randr
+    - niri
+    - xwayland-satellite
+    - polkit-kde-agent
+    - gnome-keyring
+    - xdg-desktop-portal-gtk
+    - xdg-desktop-portal-gnome
+    - swaylock
     - kanshi
     - gammastep
     - waybar
@@ -17,14 +22,11 @@ arch-linux:
     - swayidle
     - mako
     - fuzzel
-    - xorg-wayland
     - xdg-utils
     - libnotify
     - brightnessctl
     - pipewire-pulse
     - wl-clipboard
-    - grim
-    - slurp
     ### Theme
     - gnome-themes-extra
     - kvantum
@@ -55,6 +57,3 @@ arch-linux:
   paru:
     ### Tools
     - brave-bin
-    - wlopm
-    - chayang
-    - lswt
