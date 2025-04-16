@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="144" viewbox="0 0 256 144">
+  <defs>
+    <path id="_bat" d="M3 32s17-4 29 4c0 0 2 15 10 15V44s2 4 6 4 6-4 6-4v7c8 0 10-15 10-15 12-8 29-4 29-4-8 4-9 18-9 18-16 0-16 13-16 13-20-4-20 11-20 11s0-15-20-11c0 0 0-13-16-13 0 0-1-14-9-18" />
+    <linearGradient id="_grad1" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#B9F" />
+      <stop offset="1" stop-color="#F8C" />
+    </linearGradient>
+  </defs>
+  <rect width="256" height="144" fill="#223" />
+  <g transform="translate(128,72)" opacity=".4">
+    <circle r="60" fill="#B9F" opacity=".2" />
+    <path d="M0,-60 a1,1 0 0,1 0,120Z" transform="rotate(30)" fill="#B9F" opacity=".2" />
+    <circle r="42" fill="none" stroke="#B9F" stroke-width="8" opacity=".5" />
+    <circle r="38" fill="url(#_grad1)" transform="rotate(180)" opacity=".8" />
+    <circle r="30" fill="url(#_grad1)"></circle>
+    <g opacity=".3">
+      <circle r="10" fill="#67A" transform="translate(14,8)"></circle>
+      <circle r="6" fill="#67A" transform="translate(-16,10)"></circle>
+      <circle r="5" fill="#67A" transform="translate(5,-19)"></circle>
+      <circle r="2" fill="#67A" transform="translate(7,24)"></circle>
+    </g>
+    <use href="#_bat" fill="#234" transform="scale(.4) rotate(-30) translate(10,60)" />
+    <use href="#_bat" fill="#234" transform="scale(.3) rotate(30) translate(-160,-30)" />
+    <use href="#_bat" fill="#234" transform="scale(.2) rotate(15) translate(-140,140)" />
+    <use href="#_bat" fill="#234" transform="scale(.1) rotate(-15) translate(-50,280)" />
+  </g>
+</svg>
