@@ -1,12 +1,12 @@
 #!/bin/bash
 power() {
   if [[ -n $@ ]]; then
-    [[ $@ = "lock"  ]] && waylock.sh
+    [[ $@ = "lock"  ]] && swaylock
     [[ $@ = "suspend"  ]] && systemctl suspend
-    [[ $@ = "log off"  ]] && riverctl exit
+    [[ $@ = "quit"  ]] && niri msg action quit
     [[ $@ = "shutdown"  ]] && shutdown now
     [[ $@ = "reboot"  ]] && reboot
   fi
 }
-mode=$(echo -e "lock\nsuspend\nlog off\nshutdown\nreboot" | fuzzel --dmenu)
+mode=$(echo -e "lock\nsuspend\nquit\nshutdown\nreboot" | fuzzel --dmenu)
 power $mode
