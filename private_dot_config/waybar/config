@@ -2,7 +2,7 @@
   "layer": "top",
   "height": 30,
   "modules-left": [
-    "river/tags",
+    "niri/workspaces",
     "cpu",
     "memory",
     "disk",
@@ -50,10 +50,12 @@
     "on-scroll-up": "brightnessctl set 5%+",
     "on-scroll-down": "brightnessctl set 5%-",
     "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃝",
-      "󰃠"
+      "󰛩",
+      "󱩏",
+      "󱩑",
+      "󱩓",
+      "󱩕",
+      "󰛨"
     ]
   },
   "pulseaudio": {
@@ -79,15 +81,13 @@
     "on-click-right": "pavucontrol"
   },
   "memory": {
-    "interval": 10,
-    "format": " {used:0.1f} GB",
+    "format": " {used:0.1f}GiB",
     "states": {
       "warning": 75,
       "critical": 90
     }
   },
   "cpu": {
-    "interval": 10,
     "format": " {usage}%"
   },
   "battery": {
@@ -100,6 +100,7 @@
     "format-charging": "󰂄 {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": [
+      "󰂎",
       "󰁻",
       "󰁽",
       "󰁿",
@@ -108,7 +109,6 @@
     ]
   },
   "disk": {
-    "interval": 10,
     "format": " {percentage_used:2}%",
     "path": "/",
     "states": {
@@ -123,10 +123,9 @@
   "network": {
     // "interface": "wlp3s0",
     "format": "{ifname}",
-    "format-wifi": " {essid}  {bandwidthDownBits}  {bandwidthUpBits}",
+    "format-wifi": " {essid} ({signalStrength}%)",
     "format-ethernet": "󰈀 {ifname}",
     "format-disconnected": "󰕑 Disconnected",
-    "interval": 5,
     "max-length": 50
   },
   "temperature": {
@@ -137,8 +136,7 @@
     "format": "{icon} {temperatureC}°C",
     "format-icons": [
       ""
-    ],
-    "interval": 5
+    ]
   },
   "custom/mpris_play_pause": {
     "format": "{icon} {text}",
