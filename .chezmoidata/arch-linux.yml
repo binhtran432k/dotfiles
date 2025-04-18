@@ -53,6 +53,7 @@ arch-linux:
     ### Tools
     - mpv # Media Viewer
     - zathura # PDF Viewer
+    - alacritty # Terminal
   # paru -S --needed ...
   paru:
     ### Tools
