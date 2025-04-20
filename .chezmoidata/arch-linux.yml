@@ -5,28 +5,29 @@ arch-linux:
     - base-devel
     - zip
     - unzip
-    - ntfs-3g
+    - ntfs-3g # NTFS support
+    - git # Source Version Control
     ### Desktop
-    - niri
+    - niri # Window Manager
     - xwayland-satellite
     - polkit-kde-agent
     - gnome-keyring
     - xdg-desktop-portal-gtk
     - xdg-desktop-portal-gnome
-    - swaylock
-    - kanshi
-    - gammastep
-    - waybar
-    - playerctl
-    - pavucontrol
-    - swayidle
-    - mako
-    - fuzzel
-    - xdg-utils
-    - libnotify
-    - brightnessctl
-    - pipewire-pulse
-    - wl-clipboard
+    - swaylock # Wayland Locker
+    - kanshi # Wayland Display Manager
+    - gammastep # nightshift
+    - waybar # bar
+    - playerctl # Audio + Music Control
+    - pavucontrol # Audio Control - Gui
+    - swayidle # Auto Lock/Suspend
+    - mako # Notification Daemon
+    - libnotify # Notification Emitter
+    - fuzzel # Application Launcher
+    - xdg-utils # xdg-open, etc.
+    - brightnessctl # Brightness Control
+    - pipewire-pulse # Audio Support
+    - wl-clipboard # Wayland Clipboard Support
     ### Theme
     - gnome-themes-extra
     - kvantum
@@ -36,24 +37,26 @@ arch-linux:
     - noto-fonts-emoji
     - ttf-monaspace-variable
     ### Utility
-    - eza
-    - lazygit
-    - yazi
-    - zoxide
-    - zellij
+    - chezmoi # Dotfiles Manager
+    - eza # better ls/ll/tree
+    - zoxide # better cd
+    - zellij # Terminal Sessions
     - fd
     - fzf
-    - ripgrep
-    - bat
-    - less
-    - git-delta
+    - ripgrep # better grep
+    - bat # better cat
+    - less # Pager => bat Pager Support
+    - git-delta # better diff in git
+    - lazygit # Easier Git
+    - yazi # Terminal File Manager
+    - tokei # Code Statistic
+    - btop # Resource monitor
+    - mpv # Media Viewer
+    - zathura # PDF Viewer
+    - kitty # Terminal
     ### Editor
     - neovim
     - helix
-    ### Tools
-    - mpv # Media Viewer
-    - zathura # PDF Viewer
-    - alacritty # Terminal
   # paru -S --needed ...
   paru:
     ### Tools

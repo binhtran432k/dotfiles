@@ -6,7 +6,9 @@ return {
     opts = {
       scroll = { enabled = false },
       indent = { animate = { enabled = false } },
-      picker = { sources = { files = { hidden = true }, explorer = { hidden = true } } },
+      picker = {
+        sources = { files = { hidden = true }, explorer = { hidden = true } },
+      },
     },
   },
   {
