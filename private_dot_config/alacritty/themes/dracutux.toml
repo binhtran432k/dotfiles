@@ -1,0 +1,28 @@
+# Colors (Dracula)
+
+# Default colors
+[colors.primary]
+background = '#111122'
+foreground = '#ffffee'
+
+# Normal colors
+[colors.normal]
+black   = '#111122'
+red     = '#ff6666'
+green   = '#55ff77'
+yellow  = '#ffdd77'
+blue    = '#bb99ff'
+magenta = '#ff77cc'
+cyan    = '#88eeff'
+white   = '#ffffee'
+
+# Bright colors
+[colors.bright]
+black   = '#222233'
+red     = '#ff9966'
+green   = '#66eebb'
+yellow  = '#eeff88'
+blue    = '#77bbff'
+magenta = '#ff99dd'
+cyan    = '#aaffff'
+white   = '#ffffff'

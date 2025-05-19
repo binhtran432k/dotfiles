@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/themes/dracula.toml"]
+import = ["~/.config/alacritty/themes/dracutux.toml"]
 
 [window]
 decorations = "none"
