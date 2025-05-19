@@ -1,1 +1,43 @@
-theme = "dracula"
+theme = "dracutux"
+
+[editor]
+auto-format = false
+auto-save = true
+rulers = [80, 100, 120]
+cursorline = true
+cursorcolumn = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+# wrap-at-text-width = true
+wrap-indicator = "↩ "
+
+### https://docs.helix-editor.com/master/configuration.html#editorwhitespace-section
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.whitespace.characters]
+space = " "
+nbsp = "⍽"    # Non Breaking SPace
+tab = "→"
+newline = "⏎"
+tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+
+[editor.file-picker]
+hidden = false

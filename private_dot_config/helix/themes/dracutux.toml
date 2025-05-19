@@ -1,0 +1,144 @@
+# Syntax highlighting
+# -------------------
+attribute = { fg = "teal", modifiers = ["italic"] }
+
+type = "cyan"
+"type.builtin" = { fg = "cyan", modifiers = ["italic"] }
+"type.enum.variant" = { fg = "cyan2" }
+
+"constructor" = "cyan"
+
+"constant" = "purple"
+"constant.character" = "teal"
+"constant.character.escape" = "pink"
+
+"string" = "yellow"
+"string.regexp" = "red"
+"string.special" = "blue"
+"string.special.symbol" = "orange"
+
+"comment" = { fg = "comment", modifiers = ["italic"] }
+
+"variable" = "text"
+"variable.parameter" = { fg = "orange", modifiers = ["italic"] }
+"variable.builtin" = "purple"
+"variable.other.member" = { fg = "teal" }
+
+"label" = "cyan" # used for lifetimes
+
+"punctuation.special" = "cyan2"
+
+"keyword" = { fg = "pink", modifiers = ["italic"] }
+
+"operator" = "pink"
+
+"function" = "green"
+"function.macro" = "purple"
+
+"tag" = "pink"
+
+"namespace" = { fg = "cyan", modifiers = ["italic"] }
+
+"special" = "blue" # fuzzy highlight
+
+"markup.heading.1" = { fg = "purple", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "pink", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "orange", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "yellow", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "green", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "cyan", modifiers = ["bold"] }
+"markup.list" = "teal"
+"markup.list.unchecked" = "cyan"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "orange", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.link.url" = { fg = "cyan", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "pink"
+"markup.link.label" = "pink2"
+"markup.raw" = "yellow"
+"markup.quote" = { fg = "yellow", modifiers = ["italic"] }
+"markup.strikethrough" = { modfiers = ["crossed_out"] }
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "yellow"
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "base" }
+
+"ui.linenr" = { fg = "comment", modifiers = ["dim"] }
+"ui.linenr.selected" = { fg = "text" }
+
+"ui.statusline" = { fg = "text", bg = "base2" }
+"ui.statusline.inactive" = { fg = "text", bg = "base2" }
+"ui.statusline.normal" = { fg = "base", bg = "purple", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "base", bg = "cyan", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "base2" }
+"ui.window" = { fg = "base2" }
+"ui.help" = { fg = "text", bg = "base2", modifiers = ["dim"] }
+
+"ui.bufferline" = { fg = "text", bg = "base2", modifiers = ["dim"] }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold", "italic"] }
+"ui.bufferline.background" = { bg = "base2" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "base2", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "comment" }
+"ui.text.directory" = { fg = "purple" }
+
+"ui.virtual" = "selection"
+"ui.virtual.ruler" = { bg = "base2" }
+"ui.virtual.indent-guide" = "base3"
+"ui.virtual.inlay-hint" = { fg = "comment", bg = "base2" }
+"ui.virtual.jump-label" = { fg = "pink2", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "selection" }
+
+"ui.cursor" = { fg = "base", bg = "text", modifiers = ["dim"] }
+"ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
+
+"ui.cursor.primary.normal" = { fg = "base", bg = "purple" }
+"ui.cursor.primary.insert" = { fg = "base", bg = "green" }
+"ui.cursor.primary.select" = { fg = "base", bg = "cyan" }
+
+"ui.cursorline.primary" = { bg = "base2" }
+
+"ui.highlight" = { fg = "text", bg = "base2", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "text", bg = "base2" }
+"ui.menu.selected" = { fg = "text", bg = "base3", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "cyan", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+
+error = "red"
+warning = "yellow"
+info = "cyan"
+hint = "teal"
+
+[palette]
+base = "#111122"
+base2 = "#222233"
+base3 = "#444455"
+selection = "#443366"
+text = "#ffffee"
+text2 = "#ffffff"
+comment = "#5544aa"
+cyan = "#88eeff"
+cyan2 = "#aaffff"
+green = "#55ff77"
+teal = "#66eebb"
+pink = "#ff77cc"
+pink2 = "#ff99dd"
+purple = "#bb99ff"
+blue = "#77bbff"
+red = "#ff6666"
+orange = "#ff9966"
+yellow = "#ffdd77"
+yellow2 = "#eeff88"
