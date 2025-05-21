@@ -1,0 +1,39 @@
+# DRACUTUX
+gui:
+  theme:
+    activeBorderColor:
+      - "#ff77cc"
+      - bold
+    inactiveBorderColor:
+      - "#bb99ff"
+
+    searchingActiveBorderColor:
+      - "#88eeff"
+      - bold
+
+    optionsTextColor:
+      - "#6644bb"
+
+    selectedLineBgColor:
+      - "#443377"
+
+    inactiveViewSelectedLineBgColor:
+      - bold
+
+    cherryPickedCommitFgColor:
+      - "#6644bb"
+
+    cherryPickedCommitBgColor:
+      - "#88eeff"
+
+    markedBaseCommitFgColor:
+      - "#88eeff"
+
+    markedBaseCommitBgColor:
+      - "#ffdd77"
+
+    unstagedChangesColor:
+      - "#ff6666"
+
+    defaultFgColor:
+      - "#ffffee"
