@@ -1,12 +1,17 @@
 if status is-interactive
-    fish_config theme choose Dracula
-    fish_vi_key_bindings
+    fish_helix_key_bindings
 end
 
-if type -q nvim
-    export EDITOR=nvim
-else if type -q helix
+if type -q helix
     export EDITOR=helix
+else if type -q hx
+    export EDITOR=hx
+else if type -q nvim
+    export EDITOR=nvim
+else if type -q vim
+    export EDITOR=vim
+else if type -q vi
+    export EDITOR=vi
 end
 if type -q bat
     export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
