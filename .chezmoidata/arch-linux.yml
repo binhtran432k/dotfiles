@@ -61,3 +61,4 @@ arch-linux:
   paru:
     ### Tools
     - brave-bin
+    - dragon-drop
