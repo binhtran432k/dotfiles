@@ -37,7 +37,7 @@ type = "cyan"
 
 "tag" = "pink"
 
-"namespace" = { fg = "cyan", modifiers = ["italic"] }
+"namespace" = { fg = "blue" }
 
 "special" = "blue" # fuzzy highlight
 
@@ -52,12 +52,12 @@ type = "cyan"
 "markup.list.checked" = "green"
 "markup.bold" = { fg = "orange", modifiers = ["bold"] }
 "markup.italic" = { fg = "yellow", modifiers = ["italic"] }
-"markup.link.url" = { fg = "cyan", modifiers = ["italic", "underlined"] }
+"markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
 "markup.link.text" = "pink"
 "markup.link.label" = "pink2"
 "markup.raw" = "yellow"
 "markup.quote" = { fg = "yellow", modifiers = ["italic"] }
-"markup.strikethrough" = { modfiers = ["crossed_out"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
 
 "diff.plus" = "green"
 "diff.minus" = "red"
@@ -71,17 +71,21 @@ type = "cyan"
 "ui.linenr.selected" = { fg = "text" }
 
 "ui.statusline" = { fg = "text", bg = "base2" }
-"ui.statusline.inactive" = { fg = "text", bg = "base2" }
+"ui.statusline.inactive" = { fg = "grey", bg = "base2" }
 "ui.statusline.normal" = { fg = "base", bg = "purple", modifiers = ["bold"] }
 "ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "base", bg = "cyan", modifiers = ["bold"] }
 
 "ui.popup" = { fg = "text", bg = "base2" }
+"ui.popup.info" = { fg = "purple" }
 "ui.window" = { fg = "base2" }
-"ui.help" = { fg = "text", bg = "base2", modifiers = ["dim"] }
+"ui.help" = { fg = "grey", bg = "base2" }
 
-"ui.bufferline" = { fg = "text", bg = "base2", modifiers = ["dim"] }
-"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = ["bold", "italic"] }
+"ui.bufferline" = { fg = "grey", bg = "base2" }
+"ui.bufferline.active" = { fg = "text", bg = "base", modifiers = [
+  "bold",
+  "italic",
+] }
 "ui.bufferline.background" = { bg = "base2" }
 
 "ui.text" = "text"
@@ -97,7 +101,7 @@ type = "cyan"
 
 "ui.selection" = { bg = "selection" }
 
-"ui.cursor" = { fg = "base", bg = "text", modifiers = ["dim"] }
+"ui.cursor" = { fg = "base", bg = "grey" }
 "ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
 
 "ui.cursor.primary.normal" = { fg = "base", bg = "purple" }
@@ -126,10 +130,11 @@ hint = "teal"
 base = "#111122"
 base2 = "#222233"
 base3 = "#444455"
-selection = "#443366"
+selection = "#443377"
 text = "#ffffee"
 text2 = "#ffffff"
-comment = "#5544aa"
+grey = "#bbbbcc"
+comment = "#6644bb"
 cyan = "#88eeff"
 cyan2 = "#aaffff"
 green = "#55ff77"

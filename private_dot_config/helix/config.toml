@@ -8,6 +8,10 @@ cursorline = true
 cursorcolumn = true
 bufferline = "multiple"
 color-modes = true
+end-of-line-diagnostics = "hint"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
 
 [editor.cursor-shape]
 insert = "bar"
@@ -15,7 +19,7 @@ normal = "block"
 select = "underline"
 
 [editor.soft-wrap]
-enable = true
+enable = false
 # wrap-at-text-width = true
 wrap-indicator = "↩ "
 
@@ -37,7 +41,7 @@ display-inlay-hints = true
 
 [editor.indent-guides]
 render = true
-character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+character = "┊" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
 
 [editor.file-picker]
 hidden = false

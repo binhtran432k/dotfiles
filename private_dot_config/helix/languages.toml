@@ -1,3 +1,16 @@
 [[language]]
-name="toml"
-roots=["."]
+name = "toml"
+roots = ["."]
+
+[[language]]
+name = "ghostty"
+file-types = [{ glob = "ghostty/config" }, { glob = "ghostty/themes/*" }]
+
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+json.validate = { enable = true }
+json.schemas = [
+  { fileMatch = [
+    "package.json",
+  ], url = "http://json.schemastore.org/package.json" },
+]
