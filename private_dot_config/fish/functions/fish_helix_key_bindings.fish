@@ -189,8 +189,8 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
     bind -s --preset -m insert ctrl-c clear-commandline repaint-mode
     bind -s --preset -M visual -m default ctrl-c end-selection repaint-mode
 
-    bind -s --preset -m replace_one r repaint-mode
-    bind -s --preset -M replace_one -m default '' delete-char self-insert backward-char repaint-mode
+    bind -s --preset -m replace_one r end-selection repaint-mode
+    bind -s --preset -M replace_one -m default '' begin-selection kill-selection end-selection self-insert backward-char repaint-mode
 
     bind -s --preset [ history-token-search-backward
 
@@ -232,7 +232,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
     set -g fish_cursor_selection_mode inclusive
     function __fish_helix_key_bindings_on_mode_change --on-variable fish_bind_mode
         switch $fish_bind_mode
-            case insert replace replace_one default
+            case insert replace
                 set -g fish_cursor_end_mode exclusive
             case '*'
                 set -g fish_cursor_end_mode inclusive
@@ -269,7 +269,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
                 return
             end
             set -f curr_match (string sub -s $cursor (commandline -b) -l 2)
-            if string match -qr '^\s[^\s]$' $curr_match
+            if string match -qr '^\s[^\s]$' -- $curr_match
                 commandline -f backward-char
             end
             commandline -f begin-selection
@@ -280,7 +280,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
         if test $mode = default
             set -f cursor (math (commandline -C) + 1)
             set -f curr_match (string sub -s $cursor (commandline -b) -l 2)
-            if string match -qr '^\s[^\s]$' $curr_match
+            if string match -qr '^\s[^\s]$' -- $curr_match
                 commandline -f forward-char
             end
             commandline -f begin-selection
@@ -288,15 +288,17 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
         commandline -f $action
     end
     function __fish_helix_next_word_end -a mode action
+        set fish_cursor_end_mode exclusive
         if test $mode = default
             set -f cursor (math (commandline -C) + 1)
             set -f curr_match (string sub -s $cursor (commandline -b) -l 2)
-            if string match -qr '^[^\s]\s$' $curr_match
+            if string match -qr '^[^\s]\s$' -- $curr_match
                 commandline -f forward-char
             end
             commandline -f begin-selection
         end
         commandline -f forward-single-char $action backward-char
+        set fish_cursor_end_mode inclusive
     end
     function __fish_helix_delete_selection_or_char
         if test -z "$(commandline -s)"
@@ -384,6 +386,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
         end
     end
     function __fish_helix__cursor_end_selection -a direction
+        set -g fish_cursor_end_mode exclusive
         if test -z "$(commandline -s)"
             if test "$direction" = forward
                 commandline -f forward-char
@@ -399,6 +402,7 @@ function fish_helix_key_bindings --description 'helix-like key bindings for fish
                 commandline -C $cursor
             end
         end
+        set -g fish_cursor_end_mode inclusive
     end
 
     set fish_bind_mode $init_mode
