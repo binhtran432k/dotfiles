@@ -159,10 +159,10 @@ layout {
     // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
     // Color of the ring on the active monitor.
-    active-color "#bd93f9"
+    active-color "#bb99ff"
 
     // Color of the ring on inactive monitors.
-    inactive-color "#6272a4"
+    inactive-color "#6644bb"
 
     // You can also use gradients. They take precedence over solid colors.
     // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -187,8 +187,8 @@ layout {
     off
 
     width 2
-    active-color "#ff79c6"
-    inactive-color "#6272a4"
+    active-color "#ff77cc"
+    inactive-color "#6644bb"
 
     // active-gradient from="#ffbb66" to="#ffc880" angle=45 relative-to="workspace-view"
     // inactive-gradient from="#505050" to="#808080" angle=45 relative-to="workspace-view"
@@ -339,7 +339,7 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
-  Mod+T { spawn "kitty"; }
+  Mod+T { spawn "alacritty"; }
   Mod+D { spawn "fuzzel"; }
   Super+Alt+L { spawn "swaylock"; }
 
