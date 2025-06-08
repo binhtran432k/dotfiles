@@ -4,12 +4,12 @@ attribute = { fg = "teal", modifiers = ["italic"] }
 
 type = "cyan"
 "type.builtin" = { fg = "cyan", modifiers = ["italic"] }
-"type.enum.variant" = { fg = "cyan2" }
+"type.enum.variant" = { fg = "blue" }
 
 "constructor" = "cyan"
 
 "constant" = "purple"
-"constant.character" = "teal"
+"constant.character" = "orange"
 "constant.character.escape" = "pink"
 
 "string" = "yellow"
@@ -26,7 +26,7 @@ type = "cyan"
 
 "label" = "cyan" # used for lifetimes
 
-"punctuation.special" = "cyan2"
+"punctuation.special" = "blue"
 
 "keyword" = { fg = "pink", modifiers = ["italic"] }
 
@@ -37,7 +37,7 @@ type = "cyan"
 
 "tag" = "pink"
 
-"namespace" = { fg = "blue" }
+"namespace" = { fg = "purple" }
 
 "special" = "blue" # fuzzy highlight
 
@@ -54,7 +54,7 @@ type = "cyan"
 "markup.italic" = { fg = "yellow", modifiers = ["italic"] }
 "markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
 "markup.link.text" = "pink"
-"markup.link.label" = "pink2"
+"markup.link.label" = "red"
 "markup.raw" = "yellow"
 "markup.quote" = { fg = "yellow", modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
@@ -70,50 +70,50 @@ type = "cyan"
 "ui.linenr" = { fg = "comment", modifiers = ["dim"] }
 "ui.linenr.selected" = { fg = "text" }
 
-"ui.statusline" = { fg = "text", bg = "base2" }
-"ui.statusline.inactive" = { fg = "grey", bg = "base2" }
+"ui.statusline" = { fg = "text", bg = "ui_base" }
+"ui.statusline.inactive" = { fg = "subtle_text", bg = "ui_base" }
 "ui.statusline.normal" = { fg = "base", bg = "purple", modifiers = ["bold"] }
 "ui.statusline.insert" = { fg = "base", bg = "green", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "base", bg = "cyan", modifiers = ["bold"] }
 
-"ui.popup" = { fg = "text", bg = "base2" }
-"ui.popup.info" = { fg = "purple" }
-"ui.window" = { fg = "base2" }
-"ui.help" = { fg = "grey", bg = "base2" }
+"ui.popup" = { fg = "text", bg = "ui_base" }
+"ui.popup.info" = { fg = "purple", bg="base" }
+"ui.window" = { fg = "ui_base" }
+"ui.help" = { fg = "subtle_text", bg = "ui_base" }
 
-"ui.bufferline" = { fg = "grey", bg = "base2" }
+"ui.bufferline" = { fg = "subtle_text", bg = "ui_base" }
 "ui.bufferline.active" = { fg = "text", bg = "base", modifiers = [
   "bold",
   "italic",
 ] }
-"ui.bufferline.background" = { bg = "base2" }
+"ui.bufferline.background" = { bg = "ui_base" }
 
 "ui.text" = "text"
-"ui.text.focus" = { fg = "text", bg = "base2", modifiers = ["bold"] }
+"ui.text.focus" = { fg = "text", bg = "ui_selection", modifiers = ["bold"] }
 "ui.text.inactive" = { fg = "comment" }
 "ui.text.directory" = { fg = "purple" }
 
 "ui.virtual" = "selection"
-"ui.virtual.ruler" = { bg = "base2" }
-"ui.virtual.indent-guide" = "base3"
-"ui.virtual.inlay-hint" = { fg = "comment", bg = "base2" }
-"ui.virtual.jump-label" = { fg = "pink2", modifiers = ["bold"] }
+"ui.virtual.ruler" = { bg = "ui_base" }
+"ui.virtual.indent-guide" = "ui_selection"
+"ui.virtual.inlay-hint" = { fg = "comment", bg = "ui_base" }
+"ui.virtual.jump-label" = { fg = "red", modifiers = ["bold"] }
 
 "ui.selection" = { bg = "selection" }
 
-"ui.cursor" = { fg = "base", bg = "grey" }
+"ui.cursor" = { fg = "base", bg = "subtle_text" }
 "ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
 
 "ui.cursor.primary.normal" = { fg = "base", bg = "purple" }
 "ui.cursor.primary.insert" = { fg = "base", bg = "green" }
 "ui.cursor.primary.select" = { fg = "base", bg = "cyan" }
 
-"ui.cursorline.primary" = { bg = "base2" }
+"ui.cursorline.primary" = { bg = "ui_base" }
 
-"ui.highlight" = { fg = "text", bg = "base2", modifiers = ["bold"] }
+"ui.highlight" = { fg = "text", bg = "ui_base", modifiers = ["bold"] }
 
-"ui.menu" = { fg = "text", bg = "base2" }
-"ui.menu.selected" = { fg = "text", bg = "base3", modifiers = ["bold"] }
+"ui.menu" = { fg = "text", bg = "ui_base" }
+"ui.menu.selected" = { fg = "text", bg = "ui_selection", modifiers = ["bold"] }
 
 "diagnostic.error" = { underline = { color = "red", style = "curl" } }
 "diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
@@ -127,23 +127,28 @@ info = "cyan"
 hint = "teal"
 
 [palette]
-base = "#111122"
-base2 = "#222233"
-base3 = "#444455"
-selection = "#443377"
+base = "#222233"
+ui_base = "#111122"
+
 text = "#ffffee"
-text2 = "#ffffff"
-grey = "#bbbbcc"
-comment = "#6644bb"
+subtle_text = "#bbbbcc"
+
+selection = "#443377"
+ui_selection = "#444455"
+
+comment = "#6677aa"
+
 cyan = "#88eeff"
-cyan2 = "#aaffff"
+blue = "#55bbff"
+
 green = "#55ff77"
 teal = "#66eebb"
+
 pink = "#ff77cc"
-pink2 = "#ff99dd"
+
 purple = "#bb99ff"
-blue = "#77bbff"
-red = "#ff6666"
-orange = "#ff9966"
-yellow = "#ffdd77"
-yellow2 = "#eeff88"
+
+red = "#ff5555"
+
+yellow = "#eeff88"
+orange = "#ffbb77"

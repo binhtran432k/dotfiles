@@ -1,23 +1,29 @@
 inherits = "dracutux"
 
 [palette]
-base = "#222233"
-base2 = "#333344"
-base3 = "#555566"
-selection = "#554488"
+base = "#333344"
+ui_base = "#222233"
+
 text = "#eeeeee"
-text2 = "#ffffee"
-grey = "#aaaabb"
-comment = "#7755aa"
+subtle_text = "#aaaabb"
+
+selection = "#554488"
+ui_selection = "#554466"
+
+comment = "#7788bb"
+
 cyan = "#aaddee"
-cyan2 = "#bbeeee"
+blue = "#88bbee"
+
 green = "#88dd88"
 teal = "#99ddbb"
+
 pink = "#dd88bb"
-pink2 = "#ee99dd"
+
 purple = "#bb99ee"
-blue = "#88bbee"
-red = "#dd7777"
+
+red = "#dd6666"
+
 orange = "#eeaa88"
-yellow = "#eedd99"
-yellow2 = "#eeeeaa"
+
+yellow = "#eeeeaa"

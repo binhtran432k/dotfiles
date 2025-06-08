@@ -2,15 +2,15 @@
 
 # Default colors
 [colors.primary]
-background = '#111122'
+background = '#222233'
 foreground = '#ffffee'
 
 # Normal colors
 [colors.normal]
-black   = '#222233'
-red     = '#ff6666'
+black   = '#111122'
+red     = '#ff5555'
 green   = '#55ff77'
-yellow  = '#ffdd77'
+yellow  = '#eeff88'
 blue    = '#bb99ff'
 magenta = '#ff77cc'
 cyan    = '#88eeff'
@@ -19,10 +19,10 @@ white   = '#ffffee'
 # Bright colors
 [colors.bright]
 black   = '#444455'
-red     = '#ff9966'
+red     = '#ff5555'
 green   = '#66eebb'
-yellow  = '#eeff88'
-blue    = '#77bbff'
-magenta = '#ff99dd'
-cyan    = '#aaffff'
-white   = '#ffffff'
+yellow  = '#ffbb77'
+blue    = '#bb99ff'
+magenta = '#ff77cc'
+cyan    = '#55bbff'
+white   = '#ffffee'

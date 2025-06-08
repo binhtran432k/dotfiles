@@ -55,13 +55,13 @@ window#waybar {
 #tags button,
 #workspaces button {
   padding: 0 2px;
-  color: #6644bb;
+  color: #6677aa;
   box-shadow: inset 0 -3px transparent;
 }
 
 #tags button:hover,
 #workspaces button:hover {
-  background-color: #443377;
+  background-color: #444455;
 }
 
 #tags button.focused,
@@ -75,7 +75,7 @@ window#waybar {
 #tags button.urgent,
 #workspaces button.urgent,
 #pulseaudio.muted {
-  color: #ff6666;
+  color: #ff5555;
 }
 
 #memory,
@@ -94,14 +94,14 @@ window#waybar {
 #battery.warning,
 #disk.warning {
   color: #111122;
-  background: #ffdd77;
+  background: #eeff88;
 }
 
 #memory.critical,
 #battery.critical,
 #disk.critical {
   color: #111122;
-  background: #ff6666;
+  background: #ff5555;
 }
 
 #cpu {
@@ -110,11 +110,11 @@ window#waybar {
 
 #temperature,
 #idle_inhibitor.activated {
-  color: #ff9966;
+  color: #ffbb77;
 }
 
 #backlight {
-  color: #ffdd77;
+  color: #eeff88;
 }
 
 #network,

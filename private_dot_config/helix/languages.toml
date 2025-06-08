@@ -3,14 +3,40 @@ name = "toml"
 roots = ["."]
 
 [[language]]
+name = "ini"
+file-types = [
+  "ini",
+  # Systemd unit files
+  "service",
+  "automount",
+  "desktop",
+  "device",
+  "mount",
+  "nspawn",
+  "path",
+  "scope",
+  "slice",
+  "socket",
+  "swap",
+  "target",
+  "timer",
+  { glob = "systemd/**/*.conf" },
+  # Podman quadlets
+  "container",
+  "volume",
+  "kube",
+  "network",
+  { glob = ".editorconfig" },
+  { glob = ".npmrc" },
+  { glob = "hgrc" },
+  { glob = "npmrc" },
+  { glob = "rclone.conf" },
+  "properties",
+  "cfg",
+  "directory",
+  { glob = "config" },
+]
+
+[[language]]
 name = "ghostty"
 file-types = [{ glob = "ghostty/config" }, { glob = "ghostty/themes/*" }]
-
-[language-server.vscode-json-language-server.config]
-provideFormatter = true
-json.validate = { enable = true }
-json.schemas = [
-  { fileMatch = [
-    "package.json",
-  ], url = "http://json.schemastore.org/package.json" },
-]
