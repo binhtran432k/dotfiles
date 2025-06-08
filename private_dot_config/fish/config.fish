@@ -13,14 +13,18 @@ else if type -q vim
 else if type -q vi
     export EDITOR=vi
 end
+
 if type -q bat
     export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 end
+
 if type -q brave
     export BROWSER=brave
 end
 
-set -gx PATH "$HOME/.local/bin" $PATH
+if not string match -q -- "$HOME/.local/bin" $PATH
+    set -gx PATH "$HOME/.local/bin" $PATH
+end
 
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
@@ -39,5 +43,5 @@ end
 set -gx ZVM_INSTALL "$HOME/.zvm/self"
 if not string match -q -- $ZVM_INSTALL $PATH
     set -gx PATH $PATH "$HOME/.zvm/bin"
-    set -gx PATH $PATH "$ZVM_INSTALL/"
+    set -gx PATH $PATH "$ZVM_INSTALL"
 end
