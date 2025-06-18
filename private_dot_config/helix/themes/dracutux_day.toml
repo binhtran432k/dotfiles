@@ -4,19 +4,19 @@ inherits = "dracutux"
 base = "#eeeeff"
 ui_base = "#ffffff"
 
-text = "#555544"
-subtle_text = "#9999aa"
+text = "#444433"
+subtle_text = "#888899"
 
 selection = "#ddccff"
 ui_selection = "#ccccdd"
 
 comment = "#aabbee"
 
-cyan = "#5599aa"
-blue = "#5588bb"
+cyan = "#6699bb"
+blue = "#4477cc"
 
-green = "#339955"
-teal = "#449988"
+green = "#33aa55"
+teal = "#339977"
 
 pink = "#cc66aa"
 
@@ -24,6 +24,5 @@ purple = "#7744bb"
 
 red = "#ee6666"
 
-orange = "#cc7755"
-
 yellow = "#aa9944"
+orange = "#cc7755"

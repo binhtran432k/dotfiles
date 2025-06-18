@@ -1,13 +1,13 @@
 if status is-interactive
-    fish_helix_key_bindings
+    fish_vi_key_bindings
 end
 
-if type -q helix
+if type -q nvim
+    export EDITOR=nvim
+else if type -q helix
     export EDITOR=helix
 else if type -q hx
     export EDITOR=hx
-else if type -q nvim
-    export EDITOR=nvim
 else if type -q vim
     export EDITOR=vim
 else if type -q vi
@@ -18,7 +18,9 @@ if type -q bat
     export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 end
 
-if type -q brave
+if type -q google-chrome-stable
+    export BROWSER=google-chrome-stable
+else if type -q brave
     export BROWSER=brave
 end
 

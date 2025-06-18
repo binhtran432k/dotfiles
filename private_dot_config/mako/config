@@ -7,7 +7,7 @@ width=300
 height=110
 border-size=2
 border-color=#bb99ff
-border-radius=0
+border-radius=4
 icons=1
 max-icon-size=64
 default-timeout=5000
@@ -25,7 +25,7 @@ border-color=#ff5555
 default-timeout=0
 
 [urgency=high]
-border-color=#ff77cc
+border-color=#ff5555
 default-timeout=0
 
 [category=mpd]

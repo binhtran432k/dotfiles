@@ -1,5 +1,5 @@
 ! dpi is multiply of 96, 1.2 => 115
-Xft.dpi: 115
+! Xft.dpi: 115
 
 ! Dracula Xresources palette
 *.foreground: #F8F8F2

@@ -60,5 +60,5 @@ arch-linux:
   # paru -S --needed ...
   paru:
     ### Tools
-    - brave-bin
+    - google-chrome
     - dragon-drop

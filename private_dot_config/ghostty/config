@@ -54,6 +54,7 @@ keybind = alt+k=goto_split:top
 keybind = alt+l=goto_split:right
 
 keybind = alt+a>n=new_split:auto
+keybind = global:f12=toggle_quick_terminal
 keybind = alt+a>f=toggle_split_zoom
 
 keybind = alt+a>shift+n=new_tab

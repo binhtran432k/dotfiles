@@ -21,7 +21,7 @@ type = "cyan"
 
 "variable" = "text"
 "variable.parameter" = { fg = "orange", modifiers = ["italic"] }
-"variable.builtin" = "purple"
+"variable.builtin" = { fg = "purple", modifiers = ["italic"] }
 "variable.other.member" = { fg = "teal" }
 
 "label" = "cyan" # used for lifetimes
@@ -77,7 +77,7 @@ type = "cyan"
 "ui.statusline.select" = { fg = "base", bg = "cyan", modifiers = ["bold"] }
 
 "ui.popup" = { fg = "text", bg = "ui_base" }
-"ui.popup.info" = { fg = "purple", bg="base" }
+"ui.popup.info" = { fg = "purple", bg = "base" }
 "ui.window" = { fg = "ui_base" }
 "ui.help" = { fg = "subtle_text", bg = "ui_base" }
 
@@ -139,10 +139,10 @@ ui_selection = "#444455"
 comment = "#6677aa"
 
 cyan = "#88eeff"
-blue = "#55bbff"
+blue = "#66bbff"
 
 green = "#55ff77"
-teal = "#66eebb"
+teal = "#55ddcc"
 
 pink = "#ff77cc"
 

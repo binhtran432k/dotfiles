@@ -3,3 +3,6 @@ paru-bin/
 README.md
 Makefile
 LICENSE
+
+**/*.log
+.config/helix/runtime/
