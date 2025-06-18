@@ -12,6 +12,14 @@ return {
     },
   },
   {
+    "noice.nvim",
+    opts = {
+      presets = {
+        lsp_doc_border = true,
+      },
+    },
+  },
+  {
     "lualine.nvim",
     opts = {
       options = {
@@ -45,11 +53,11 @@ return {
         highlight = {
           "RainbowDelimiterRed",
           "RainbowDelimiterYellow",
-          "RainbowDelimiterBlue",
           "RainbowDelimiterOrange",
           "RainbowDelimiterGreen",
-          "RainbowDelimiterViolet",
           "RainbowDelimiterCyan",
+          "RainbowDelimiterBlue",
+          "RainbowDelimiterViolet",
         },
       }
     end,

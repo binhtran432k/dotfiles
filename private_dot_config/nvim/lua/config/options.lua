@@ -23,6 +23,17 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
 
+vim.opt.colorcolumn = { 80, 100, 120 }
+vim.opt.cursorcolumn = true
+vim.opt.listchars = {
+  -- eol = "↵",
+  tab = "·┈",
+  trail = "·",
+  nbsp = "␣",
+  precedes = "❮",
+  extends = "❯",
+}
+
 vim.opt.clipboard = ""
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
