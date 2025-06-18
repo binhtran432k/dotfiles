@@ -4,7 +4,3 @@ dark = "dracula"
 [status]
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
-
-[plugin]
-preloaders = []
-previewers = []

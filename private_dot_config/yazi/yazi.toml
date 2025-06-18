@@ -1,0 +1,11 @@
+[plugin]
+prepend_preloaders = [
+  { mime = "application/*", run = "noop" },
+  { mime = "image/*", run = "noop" },
+  { mime = "video/*", run = "noop" },
+]
+prepend_previewers = [
+  { mime = "application/*", run = "noop" },
+  { mime = "image/*", run = "noop" },
+  { mime = "video/*", run = "noop" },
+]
