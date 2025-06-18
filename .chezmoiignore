@@ -3,14 +3,3 @@ paru-bin/
 README.md
 Makefile
 LICENSE
-
-./hardwares/
-./home/
-./hosts/
-./modules/
-./nixos/
-./profiles/
-./pkgs/
-./overlays/
-./flake.lock
-./flake.nix
