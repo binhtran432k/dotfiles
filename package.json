@@ -1,0 +1,19 @@
+{
+  "name": "@binhtran432k/dotfiles",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "build": "node --experimental-transform-types xtask.ts --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "@jsquash/oxipng": "^2.3.0",
+    "@resvg/resvg-wasm": "^2.6.2",
+    "@types/node": "^24.0.10"
+  }
+}

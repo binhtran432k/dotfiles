@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="256" height="144">
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="256">
   <defs>
     <path id="b" d="M3 32s17-4 29 4c0 0 2 15 10 15v-7s2 4 6 4 6-4 6-4v7c8 0 10-15 10-15 12-8 29-4 29-4-8 4-9 18-9 18-16 0-16 13-16 13-20-4-20 11-20 11s0-15-20-11c0 0 0-13-16-13 0 0-1-14-9-18"/>
   </defs>
-  <path fill="#112" d="M0 0h256v144H0z"/>
-  <g opacity=".7" transform="translate(128 72)">
-    <circle r="100" fill="#bbc" opacity=".1"/>
+  <path fill="#112" d="M0 0h144v256H0z"/>
+  <g opacity=".7" transform="translate(72 128)">
+    <circle r="100" fill="#bbc" opacity=".05"/>
     <circle r="60" fill="#bbc" opacity=".1"/>
     <path fill="#bbc" d="M30-52A60 60 0 0 1-30 52Z" opacity=".1"/>
     <circle r="42" fill="none" stroke="#bbc" stroke-width="8" opacity=".3"/>
