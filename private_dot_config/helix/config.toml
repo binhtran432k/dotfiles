@@ -19,25 +19,25 @@ normal = "block"
 select = "underline"
 
 [editor.soft-wrap]
-enable = false
+enable = true
 # wrap-at-text-width = true
-wrap-indicator = "↩ "
 
 ### https://docs.helix-editor.com/master/configuration.html#editorwhitespace-section
 [editor.whitespace.render]
-space = "all"
+space = "none"
 tab = "all"
-newline = "none"
+newline = "all"
 
 [editor.whitespace.characters]
-space = " "
-nbsp = "⍽"    # Non Breaking SPace
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
 tab = "→"
 newline = "⏎"
-tabpad = "·"  # Tabs will look like "→···" (depending on tab width)
+tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
 [editor.lsp]
-display-inlay-hints = false
+display-inlay-hints = true
 
 [editor.indent-guides]
 render = true

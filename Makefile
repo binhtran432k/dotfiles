@@ -53,7 +53,3 @@ dotnet:
 	rm -f ./dotnet-install.sh
 	wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	chmod +x ./dotnet-install.sh
-
-.PHONY: cargo-binstall
-cargo-binstall:
-	curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash

@@ -4,8 +4,8 @@ inherits = "dracutux"
 base = "#eeeeff"
 ui_base = "#ffffff"
 
-text = "#444433"
-subtle_text = "#888899"
+text = "#222233"
+subtle_text = "#777788"
 
 selection = "#ddccff"
 ui_selection = "#ccccdd"

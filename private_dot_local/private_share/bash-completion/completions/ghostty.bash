@@ -63,6 +63,7 @@ _ghostty() {
     config+=" --font-codepoint-map="
     config+=" '--font-thicken '"
     config+=" --font-thicken-strength="
+    config+=" --font-shaping-break="
     config+=" --alpha-blending="
     config+=" --adjust-cell-width="
     config+=" --adjust-cell-height="
@@ -88,12 +89,10 @@ _ghostty() {
     config+=" '--background-image-repeat '"
     config+=" --selection-foreground="
     config+=" --selection-background="
-    config+=" '--selection-invert-fg-bg '"
     config+=" '--selection-clear-on-typing '"
     config+=" --minimum-contrast="
     config+=" --palette="
     config+=" --cursor-color="
-    config+=" '--cursor-invert-fg-bg '"
     config+=" --cursor-opacity="
     config+=" --cursor-style="
     config+=" '--cursor-style-blink '"
@@ -237,6 +236,7 @@ _ghostty() {
       --font-codepoint-map) return ;;
       --font-thicken) return ;;
       --font-thicken-strength) return ;;
+      --font-shaping-break) mapfile -t COMPREPLY < <( compgen -W "cursor no-cursor" -- "$cur" ); _add_spaces ;;
       --alpha-blending) mapfile -t COMPREPLY < <( compgen -W "native linear linear-corrected" -- "$cur" ); _add_spaces ;;
       --adjust-cell-width) return ;;
       --adjust-cell-height) return ;;
@@ -262,12 +262,10 @@ _ghostty() {
       --background-image-repeat) return ;;
       --selection-foreground) return ;;
       --selection-background) return ;;
-      --selection-invert-fg-bg) return ;;
       --selection-clear-on-typing) return ;;
       --minimum-contrast) return ;;
       --palette) return ;;
       --cursor-color) return ;;
-      --cursor-invert-fg-bg) return ;;
       --cursor-opacity) return ;;
       --cursor-style) mapfile -t COMPREPLY < <( compgen -W "bar block underline block_hollow" -- "$cur" ); _add_spaces ;;
       --cursor-style-blink) return ;;

@@ -9,6 +9,7 @@ type = "cyan"
 "constructor" = "cyan"
 
 "constant" = "purple"
+"constant.builtin" = { fg = "purple", modifiers = ["bold"] }
 "constant.character" = "orange"
 "constant.character.escape" = "pink"
 
@@ -22,7 +23,7 @@ type = "cyan"
 "variable" = "text"
 "variable.parameter" = { fg = "orange", modifiers = ["italic"] }
 "variable.builtin" = { fg = "purple", modifiers = ["italic"] }
-"variable.other.member" = { fg = "teal" }
+"variable.other.member" = "teal"
 
 "label" = "cyan" # used for lifetimes
 
@@ -33,9 +34,11 @@ type = "cyan"
 "operator" = "pink"
 
 "function" = "green"
+"function.builtin" = { fg = "green", modifiers = ["italic"] }
 "function.macro" = "purple"
 
 "tag" = "pink"
+"tag.builtin" = { fg = "pink", modifiers = ["italic"] }
 
 "namespace" = { fg = "purple" }
 

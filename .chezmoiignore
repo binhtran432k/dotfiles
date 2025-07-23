@@ -2,7 +2,13 @@ assets/
 paru-bin/
 README.md
 Makefile
+justfile
 LICENSE
+
+xtask.ts
+node_modules/
+package.json
+pnpm-lock.yaml
 
 **/*.log
 .config/helix/runtime/

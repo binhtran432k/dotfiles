@@ -27,6 +27,11 @@ const build = async () => {
       await fsPromises
         .readFile(new URL("./assets/background.svg", import.meta.url)),
       { fitTo: { mode: 'width', value: 2560 } }));
+  await fsPromises.writeFile(
+    new URL("./assets/background_mobile.png", import.meta.url), await processPng(
+      await fsPromises
+        .readFile(new URL("./assets/background_mobile.svg", import.meta.url)),
+      { fitTo: { mode: 'width', value: 1080 } }));
 }
 
 

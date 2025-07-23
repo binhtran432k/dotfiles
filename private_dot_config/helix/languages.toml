@@ -1,42 +1,19 @@
+[language-server.emmet-lsp]
+command = "emmet-language-server"
+args = ["--stdio"]
+
 [[language]]
 name = "toml"
 roots = ["."]
 
 [[language]]
-name = "ini"
-file-types = [
-  "ini",
-  # Systemd unit files
-  "service",
-  "automount",
-  "desktop",
-  "device",
-  "mount",
-  "nspawn",
-  "path",
-  "scope",
-  "slice",
-  "socket",
-  "swap",
-  "target",
-  "timer",
-  { glob = "systemd/**/*.conf" },
-  # Podman quadlets
-  "container",
-  "volume",
-  "kube",
-  "network",
-  { glob = ".editorconfig" },
-  { glob = ".npmrc" },
-  { glob = "hgrc" },
-  { glob = "npmrc" },
-  { glob = "rclone.conf" },
-  "properties",
-  "cfg",
-  "directory",
-  { glob = "config" },
-]
-
-[[language]]
 name = "ghostty"
 file-types = [{ glob = "ghostty/config" }, { glob = "ghostty/themes/*" }]
+
+[[language]]
+name = "html"
+language-servers = ["vscode-html-language-server", "emmet-lsp"]
+
+[[language]]
+name = "javascript"
+language-servers = ["typescript-language-server", "emmet-lsp"]

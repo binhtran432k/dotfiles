@@ -4,10 +4,9 @@
 
 keybinds clear-defaults=true {
     locked {
-        bind "Alt 9" { SwitchToMode "normal"; }
+        bind "Alt a" { SwitchToMode "normal"; }
     }
     normal {
-        bind "f" { ToggleFocusFullscreen; SwitchToMode "locked"; }
         bind "n" { NewPane; SwitchToMode "locked"; }
         bind "N" { NewTab; SwitchToMode "locked"; }
     }
@@ -146,14 +145,16 @@ keybinds clear-defaults=true {
         bind "Alt 6" { GoToTab 6; }
         bind "Alt 7" { GoToTab 7; }
         bind "Alt 8" { GoToTab 8; }
-        bind "Alt 0" { ToggleFloatingPanes; }
+        bind "Alt 9" { GoToTab 9; }
+        bind "Alt Enter" { ToggleFloatingPanes; }
         bind "Alt h" { MoveFocusOrTab "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
+        bind "Alt f" { ToggleFocusFullscreen; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Alt 9" { SwitchToMode "locked"; }
+        bind "Alt a" { SwitchToMode "locked"; }
         bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "entersearch" {
@@ -242,18 +243,18 @@ plugins {
 load_plugins {
 }
 
-ui {
-  pane_frames {
-    rounded_corners true
-  }
-}
+// ui {
+//   pane_frames {
+//     rounded_corners true
+//   }
+// }
  
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
 //   - true
 //   - false (Default)
 // 
-simplified_ui false
+simplified_ui true
  
 // Choose the theme that is specified in the themes section.
 // Default: default
