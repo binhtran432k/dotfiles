@@ -11,5 +11,7 @@ node_modules/
 package.json
 pnpm-lock.yaml
 
+*.bak
 **/*.log
+.config/fish/fishd.*
 .config/helix/runtime/

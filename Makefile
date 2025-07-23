@@ -53,3 +53,33 @@ dotnet:
 	rm -f ./dotnet-install.sh
 	wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	chmod +x ./dotnet-install.sh
+
+.PHONY: monofonts
+monofonts:
+	mkdir -p "${HOME}/.local/share/fonts" && \
+	bash ./scripts/monaspace-install.sh Argon && \
+	bash ./scripts/monaspace-install.sh Krypton && \
+	bash ./scripts/monaspace-install.sh Neon && \
+	bash ./scripts/monaspace-install.sh Radon && \
+	bash ./scripts/monaspace-install.sh Xenon
+
+.PHONY: git-credential-oauth
+git-credential-oauth:
+	bash ./scripts/install.sh \
+		https://github.com/hickford/git-credential-oauth/releases/download/v0.15.1/git-credential-oauth_0.15.1_linux_amd64.tar.gz \
+		git-credential-oauth.tar.gz \
+		git-credential-oauth git-credential-oauth
+
+.PHONY: nnn
+nnn:
+	bash ./scripts/install.sh \
+		https://github.com/jarun/nnn/releases/download/v5.1/nnn-static-5.1.x86_64.tar.gz \
+		nnn.tar.gz \
+		nnn-static nnn
+
+.PHONY: lazygit
+lazygit:
+	bash ./scripts/install.sh \
+		https://github.com/jesseduffield/lazygit/releases/download/v0.53.0/lazygit_0.53.0_Linux_x86_64.tar.gz \
+		lazygit.tar.gz \
+		lazygit lazygit
