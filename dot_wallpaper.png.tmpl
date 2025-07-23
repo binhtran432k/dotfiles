@@ -1,1 +1,1 @@
-{{ include "./assets/background.png" }}
+{{- if ne (joinPath "./assets/background.png" | lstat) nil -}}{{- include "./assets/background.png" -}}{{- end -}}

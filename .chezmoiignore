@@ -1,4 +1,5 @@
 assets/
+scripts/
 paru-bin/
 README.md
 Makefile

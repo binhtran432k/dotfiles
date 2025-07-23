@@ -2,4 +2,5 @@
 /win32yank/
 /dotnet-install.sh
 node_modules/
+/build/
 *.png
