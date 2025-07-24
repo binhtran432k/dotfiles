@@ -63,6 +63,16 @@ monofonts:
 	bash ./scripts/monaspace-install.sh Radon && \
 	bash ./scripts/monaspace-install.sh Xenon
 
+.PHONY: fish
+fish:
+	bash ./scripts/install.sh \
+		https://github.com/fish-shell/fish-shell/releases/download/4.0.2/fish-static-amd64-4.0.2.tar.xz \
+		fish.tar.xz \
+		fish fish \
+		fish_indent fish_indent \
+		fish_key_reader fish_key_reader
+	fish --install=${HOME}/.local
+
 .PHONY: git-credential-oauth
 git-credential-oauth:
 	bash ./scripts/install.sh \
