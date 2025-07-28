@@ -23,7 +23,11 @@ return {
         providers = {
           snippets = {
             opts = {
-              extended_filetypes = { typescript = { "javascript" }, typescriptreact = { "javascriptreact" } },
+              global_snippets = { "all", "loremipsum" },
+              extended_filetypes = {
+                typescript = { "javascript" },
+                typescriptreact = { "javascriptreact" },
+              },
             },
           },
         },

@@ -1,15 +1,15 @@
 if status is-interactive
-    fish_helix_key_bindings
-    # fish_vi_key_bindings
+    # fish_helix_key_bindings
+    fish_vi_key_bindings
 end
 
-if type -q helix
+if type -q nvim
+    export EDITOR=nvim
+else if type -q helix
     alias hx="helix"
     export EDITOR=helix
 else if type -q hx
     export EDITOR=hx
-else if type -q nvim
-    export EDITOR=nvim
 else if type -q vim
     export EDITOR=vim
 else if type -q vi

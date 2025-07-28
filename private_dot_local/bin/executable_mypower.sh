@@ -4,6 +4,7 @@ power() {
     [[ $@ = "lock"  ]] && swaylock
     [[ $@ = "suspend"  ]] && systemctl suspend
     [[ $@ = "quit"  ]] && niri msg action quit
+    # [[ $@ = "quit"  ]] && riverctl exit
     [[ $@ = "shutdown"  ]] && shutdown now
     [[ $@ = "reboot"  ]] && reboot
   fi

@@ -4,7 +4,7 @@ PartOf=graphical-session.target
 After=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/gammastep -O3500
+ExecStart=/usr/bin/gammastep -O3000
 Restart=on-failure
 
 [Install]

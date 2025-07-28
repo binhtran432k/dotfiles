@@ -1,8 +1,14 @@
 return {
   {
-    "stevearc/oil.nvim",
+    "echasnovski/mini.files",
     keys = {
-      { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+      {
+        "-",
+        function()
+          MiniFiles.open()
+        end,
+        desc = "Mini Files",
+      },
     },
     opts = {},
   },

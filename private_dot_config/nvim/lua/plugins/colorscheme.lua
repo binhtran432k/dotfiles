@@ -19,10 +19,12 @@ return {
   -- },
   {
     "binhtran432k/dracutux.nvim",
-    dev = true,
     priority = 1000,
     opts = {
       cache = false,
+      on_highlights = function(highlights, p)
+        -- highlights["SnacksDashboardHeader"] = { fg = p.orange }
+      end,
     },
   },
   { "catppuccin", enabled = false },

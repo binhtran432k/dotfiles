@@ -4,10 +4,39 @@ return {
     ---@module 'snacks'
     ---@type snacks.Config
     opts = {
-      scroll = { enabled = false },
-      indent = { animate = { enabled = false } },
       picker = {
         sources = { files = { hidden = true }, explorer = { hidden = true } },
+        win = {
+          input = {
+            keys = {
+              ["<C-u>"] = { "preview_scroll_up", mode = { "i", "n" } },
+              ["<C-d>"] = { "preview_scroll_down", mode = { "i", "n" } },
+            },
+          },
+        },
+      },
+      dashboard = {
+        preset = {
+          --           header = [[
+          -- 
+          -- ████
+          -- ]],
+          --           header = [[
+          --     
+          -- ██
+          -- ████
+          -- ██
+          --      ]],
+          header = [[
+                                                           Z
+      █████                      ████     ██         z  
+     █████                        ████                   
+     ███   ███ ███████████████████ ██  █████ 
+    ███    ████     ██  ███████████ ███ ████████ 
+   ███    ████   ██    ████████████ ███ ███ ██ ███ 
+ █████████     ██ ██         ██ █████ ███ ███ ██ ███ 
+███████████████████████████████  ███ ███ ███ ██ ███]],
+        },
       },
     },
   },

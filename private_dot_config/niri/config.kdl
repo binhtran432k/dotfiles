@@ -252,7 +252,8 @@ layout {
 // spawn-at-startup "xwayland-satellite"
 
 environment {
-    DISPLAY ":0"
+  DISPLAY ":0"
+  GOLDENDICT_FORCE_WAYLAND "1"
 }
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -339,7 +340,8 @@ binds {
   Mod+Shift+Slash { show-hotkey-overlay; }
 
   // Suggested binds for running programs: terminal, app launcher, screen locker.
-  Mod+T { spawn "kitty"; }
+  Mod+Return { spawn "alacritty"; }
+  // Mod+Return { spawn "ghostty"; }
   Mod+D { spawn "fuzzel"; }
   Super+Alt+L { spawn "swaylock"; }
 
@@ -540,8 +542,8 @@ binds {
   Mod+Shift+Equal { set-window-height "+10%"; }
 
   // Move the focused window between the floating and the tiling layout.
-  Mod+V       { toggle-window-floating; }
-  Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+  Mod+Ctrl+Space       { toggle-window-floating; }
+  Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
 
   // Toggle tabbed column display mode.
   // Windows in this column will appear as vertical tabs,

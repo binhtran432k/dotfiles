@@ -63,6 +63,16 @@ monofonts:
 	bash ./scripts/monaspace-install.sh Radon && \
 	bash ./scripts/monaspace-install.sh Xenon
 
+.PHONY: nvim
+nvim:
+	wget -O "${HOME}/.local/bin/nvim" "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage" && \
+	chmod +x "${HOME}/.local/bin/nvim"
+
+.PHONY: ghostty
+ghostty:
+	wget -O "${HOME}/.local/bin/ghostty" "https://github.com/pkgforge-dev/ghostty-appimage/releases/download/tip/Ghostty-1.1.4-main+1883137-x86_64.AppImage" && \
+	chmod +x "${HOME}/.local/bin/ghostty"
+
 .PHONY: fish
 fish:
 	bash ./scripts/install.sh \
@@ -93,3 +103,16 @@ lazygit:
 		https://github.com/jesseduffield/lazygit/releases/download/v0.53.0/lazygit_0.53.0_Linux_x86_64.tar.gz \
 		lazygit.tar.gz \
 		lazygit lazygit
+
+.PHONY: nushell
+nushell:
+	bash ./scripts/install.sh \
+		https://github.com/nushell/nushell/releases/download/0.106.0/nu-0.106.0-x86_64-unknown-linux-musl.tar.gz \
+		nu.tar.gz \
+		nu*/nu* "."
+
+carapace:
+	bash ./scripts/install.sh \
+		https://github.com/carapace-sh/carapace-bin/releases/download/v1.4.1/carapace-bin_1.4.1_linux_amd64.tar.gz \
+		carapace.tar.gz \
+		carapace carapace

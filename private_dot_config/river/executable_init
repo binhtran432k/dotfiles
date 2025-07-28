@@ -131,14 +131,20 @@ riverctl rule-add -app-id float float
 # Set the default layout generator to be rivertile and start it.
 # River will send the process group of the init executable SIGTERM on exit.
 riverctl default-layout rivertile
+
+
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river
+systemctl --user restart xdg-desktop-portal
+
 rivertile -view-padding 4 -outer-padding 4 &
 gammastep -O3500 &
 mako &
 waybar &
 swayidle -w \
-  timeout 300 "waylock.sh" \
-  timeout 600 "wlopm --off '*'" resume "wlopm --on '*'" \
+  timeout 600 "waylock.sh" \
+  timeout 601 "wlopm --off '*'" resume "wlopm --on '*'" \
   timeout 1200 "systemctl suspend" \
   before-sleep "waylock.sh" &
-ghostty &
+# ghostty &
 kanshi &

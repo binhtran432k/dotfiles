@@ -9,7 +9,7 @@ mkdir -p $OUT && \
 wget -O $TAR $IN && \
 tar -xf $TAR -C $OUT && \
 while [ ! -z "$1" ]; do
-  cp "$OUT/$1" $HOME/.local/bin/$2
+  cp $OUT/$1 $HOME/.local/bin/$2
   shift 2
 done
 rm -f $TAR && \

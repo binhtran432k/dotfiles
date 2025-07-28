@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.autoformat = false
+vim.g.snacks_animate = false
 
 vim.g.root_spec = {
   {
@@ -23,18 +24,13 @@ vim.g.markdown_fenced_languages = {
   "ts=typescript",
 }
 
-vim.opt.colorcolumn = { 80, 100, 120 }
-vim.opt.cursorcolumn = true
-vim.opt.listchars = {
-  -- eol = "↵",
-  tab = "·┈",
-  trail = "·",
-  nbsp = "␣",
-  precedes = "❮",
-  extends = "❯",
-}
+vim.o.wrap = true
+vim.o.wrapmargin = 4
+vim.o.colorcolumn = "80,100,120"
+vim.o.cursorcolumn = true
+vim.o.listchars = "eol:↵,tab:·┈,trail:·,nbsp:␣,precedes:❮,extends:❯"
 
-vim.opt.clipboard = ""
+vim.o.clipboard = ""
 if vim.fn.has("wsl") == 1 then
   vim.g.clipboard = {
     name = "win32yank-wsl",
@@ -50,7 +46,7 @@ if vim.fn.has("wsl") == 1 then
   }
 end
 
-vim.opt.spelloptions = "camel,noplainbuffer"
+vim.o.spelloptions = "camel,noplainbuffer"
 
 -- vim.lsp.set_log_level("trace")
 

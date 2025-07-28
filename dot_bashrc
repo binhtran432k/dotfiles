@@ -1,0 +1,22 @@
+# vim:ft=bash
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias ll='ls -l --color=auto'
+alias grep='grep --color=auto'
+
+alias lg='lazygit'
+
+PS1='[\u@\h \W]\$ '
+
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+[[ -f "$HOME/.deno/env" ]] && source "$HOME/.deno/env"
+
+source $HOME/.local/share/bash-completion/completions/deno.bash
+source $HOME/.local/share/bash-completion/completions/ghostty.bash
+
