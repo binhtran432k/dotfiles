@@ -3,7 +3,6 @@ scripts/
 paru-bin/
 README.md
 Makefile
-justfile
 LICENSE
 
 xtask.ts

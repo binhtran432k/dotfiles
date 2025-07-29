@@ -1,5 +1,5 @@
 return {
-  { import = "plugins.lang.gherkin" },
+  -- { import = "plugins.lang.gherkin" },
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {

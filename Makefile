@@ -58,6 +58,14 @@ dotnet:
 zoxide:
 	curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 
+.PHONY: cargo-binstall
+cargo-binstall:
+	curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+.PHONY: deno
+deno:
+	curl -fsSL https://deno.land/install.sh | sh
+
 .PHONY: monofonts
 monofonts:
 	mkdir -p "${HOME}/.local/share/fonts" && \
@@ -69,13 +77,11 @@ monofonts:
 
 .PHONY: nvim
 nvim:
-	wget -O "${HOME}/.local/bin/nvim" "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.appimage" && \
-	chmod +x "${HOME}/.local/bin/nvim"
-
-.PHONY: ghostty
-ghostty:
-	wget -O "${HOME}/.local/bin/ghostty" "https://github.com/pkgforge-dev/ghostty-appimage/releases/download/tip/Ghostty-1.1.4-main+1883137-x86_64.AppImage" && \
-	chmod +x "${HOME}/.local/bin/ghostty"
+	rm -rf ~/.local/share-bin/nvim-linux-x86_64
+	wget -O nvim.tar.gz "https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz"
+	tar -xzvf nvim.tar.gz -C ~/.local/share-bin
+	ln -sf ~/.local/share-bin/nvim-linux-x86_64/bin/nvim -t ~/.local/bin
+	rm -f nvim.tar.gz
 
 .PHONY: fish
 fish:

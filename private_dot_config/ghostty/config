@@ -44,23 +44,23 @@
 
 theme = dracutux.conf
 font-family = monospace
-command = nu
+window-decoration = none
 
 # Hack Esc Key
 keybind = ctrl+left_bracket=text:\x1b
 
 ### Disalbe Alt+[number] for zellij
 
-# keybind = alt+1=unbind
-# keybind = alt+2=unbind
-# keybind = alt+3=unbind
-# keybind = alt+4=unbind
-# keybind = alt+5=unbind
-# keybind = alt+6=unbind
-# keybind = alt+7=unbind
-# keybind = alt+8=unbind
-# keybind = alt+9=unbind
-# keybind = alt+0=unbind
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+keybind = alt+7=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = alt+0=unbind
 
 ### Shaders
 
@@ -70,15 +70,15 @@ custom-shader = shaders/cursor_blaze.glsl
 
 ### Key bindings
 
-keybind = alt+h=goto_split:left
-keybind = alt+j=goto_split:bottom
-keybind = alt+k=goto_split:top
-keybind = alt+l=goto_split:right
-
-keybind = alt+f=toggle_split_zoom
-
-keybind = alt+a>n=new_split:auto
-keybind = alt+enter=toggle_quick_terminal
-
-keybind = alt+a>shift+n=new_tab
-keybind = alt+a>r=reload_config
+# keybind = alt+h=goto_split:left
+# keybind = alt+j=goto_split:bottom
+# keybind = alt+k=goto_split:top
+# keybind = alt+l=goto_split:right
+#
+# keybind = alt+f=toggle_split_zoom
+#
+# keybind = alt+a>n=new_split:auto
+# keybind = alt+enter=toggle_quick_terminal
+#
+# keybind = alt+a>shift+n=new_tab
+# keybind = alt+a>r=reload_config

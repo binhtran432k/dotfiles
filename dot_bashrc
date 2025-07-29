@@ -11,6 +11,7 @@ alias ll='ls -l --color=auto'
 alias grep='grep --color=auto'
 
 alias lg='lazygit'
+alias zlj='zellij'
 
 PS1='[\u@\h \W]\$ '
 
@@ -20,6 +21,12 @@ PS1='[\u@\h \W]\$ '
 source $HOME/.local/share/bash-completion/completions/deno.bash
 source $HOME/.local/share/bash-completion/completions/ghostty.bash
 
+# Local Bin Path
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Editor
 if type -p nvim &>/dev/null; then
   export EDITOR=nvim
 elif type -p helix &>/dev/null; then
@@ -33,27 +40,22 @@ elif type -p vi &>/dev/null; then
   export EDITOR=vi
 fi
 
+# Man Pager
 if type -p nvim &>/dev/null; then
   export MANPAGER="nvim +Man!"
 elif type -p bat &>/dev/null; then
   export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
 fi
 
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-
+# Browser
 if type -p brave &>/dev/null; then
   export BROWSER=brave
 elif type -p google-chrome-stable &>/dev/null; then
   export BROWSER=google-chrome-stable
 fi
 
-if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-  export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# Desktop
-export GTK_THEME="Adwaita"
-export QT_STYLE_OVERRIDE="kvantum"
+# Misc
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"

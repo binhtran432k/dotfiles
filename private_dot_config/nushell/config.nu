@@ -19,6 +19,7 @@
 
 alias ll = ls -l
 alias lg = lazygit
+alias zlj = zellij
 
 const carapace_path = '~/.cache/carapace/init.nu'
 source (if ($carapace_path | path exists) { $carapace_path } else { null })
