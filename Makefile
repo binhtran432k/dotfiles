@@ -54,6 +54,10 @@ dotnet:
 	wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh
 	chmod +x ./dotnet-install.sh
 
+.PHONY: zoxide
+zoxide:
+	curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
 .PHONY: monofonts
 monofonts:
 	mkdir -p "${HOME}/.local/share/fonts" && \

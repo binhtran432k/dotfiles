@@ -22,6 +22,12 @@ $env.config.edit_mode = 'vi'
 
 # Carapace
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+if (which carapace | is-not-empty) and not ('~/.cache/carapace/init.nu' | path exists) {
+  mkdir ~/.cache/carapace
+  carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+}
 
+# Zoxide
+if (which zoxide | is-not-empty) and not ('~/.zoxide.nu' | path exists) {
+  zoxide init nushell | save -f ~/.zoxide.nu
+}

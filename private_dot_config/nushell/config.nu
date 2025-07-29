@@ -17,10 +17,11 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
-source ./extras/zoxide.nu
-
 alias ll = ls -l
 alias lg = lazygit
 
-# Config
-source ~/.cache/carapace/init.nu
+const carapace_path = '~/.cache/carapace/init.nu'
+source (if ($carapace_path | path exists) { $carapace_path } else { null })
+
+const zoxide_path = '~/.zoxide.nu'
+source (if ($zoxide_path | path exists) { $zoxide_path } else { null })

@@ -58,14 +58,6 @@ return {
     },
   },
   {
-    "bufferline.nvim",
-    opts = {
-      options = {
-        separator_style = "slant",
-      },
-    },
-  },
-  {
     "hiphish/rainbow-delimiters.nvim",
     event = { "VeryLazy" },
     config = function()

@@ -20,3 +20,53 @@ PS1='[\u@\h \W]\$ '
 source $HOME/.local/share/bash-completion/completions/deno.bash
 source $HOME/.local/share/bash-completion/completions/ghostty.bash
 
+if type -p nvim &>/dev/null; then
+  export EDITOR=nvim
+elif type -p helix &>/dev/null; then
+  alias hx='helix'
+  export EDITOR=helix
+elif type -p hx &>/dev/null; then
+  export EDITOR=hx
+elif type -p vim &>/dev/null; then
+  export EDITOR=vim
+elif type -p vi &>/dev/null; then
+  export EDITOR=vi
+fi
+
+if type -p nvim &>/dev/null; then
+  export MANPAGER="nvim +Man!"
+elif type -p bat &>/dev/null; then
+  export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+fi
+
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+
+if type -p brave &>/dev/null; then
+  export BROWSER=brave
+elif type -p google-chrome-stable &>/dev/null; then
+  export BROWSER=google-chrome-stable
+fi
+
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+if [[ ":$PATH:" != *":$PNPM_HOME:"* ]]; then
+    export PATH="$PNPM_HOME:$PATH"
+fi
+# pnpm end
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+if [[ ":$PATH:" != *":$BUN_INSTALL/bin:"* ]]; then
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+if [[ ":$PATH:" != *":$ZVM_INSTALL:"* ]]; then
+    export PATH="$PATH:$HOME/.zvm/bin"
+    export PATH="$PATH:$ZVM_INSTALL"
+fi
