@@ -51,6 +51,10 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# Desktop
+export GTK_THEME="Adwaita"
+export QT_STYLE_OVERRIDE="kvantum"
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 if [[ ":$PATH:" != *":$PNPM_HOME:"* ]]; then
