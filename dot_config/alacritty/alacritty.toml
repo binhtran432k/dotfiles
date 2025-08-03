@@ -1,0 +1,13 @@
+[general]
+import = ["~/.config/alacritty/themes/dracutux.toml"]
+
+# [terminal]
+# shell = "fish"
+
+[window]
+decorations = "none"
+
+# [keyboard]
+# bindings = [
+#   { key = "LBracket", mods = "Control", chars = "\u001b" },
+# ]

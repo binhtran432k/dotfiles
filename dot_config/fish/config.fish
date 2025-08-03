@@ -1,13 +1,17 @@
 if status is-interactive
-    # fish_helix_key_bindings
-    fish_vi_key_bindings
+    fish_helix_key_bindings
+    # fish_vi_key_bindings
 end
 
-if type -q nvim
-    export EDITOR=nvim
-else if type -q helix
+if not string match -q -- "$HOME/.local/bin" $PATH
+    set -gx PATH "$HOME/.local/bin" $PATH
+end
+
+if type -q helix
     alias hx="helix"
     export EDITOR=helix
+else if type -q nvim
+    export EDITOR=nvim
 else if type -q hx
     export EDITOR=hx
 else if type -q vim
@@ -26,10 +30,6 @@ if type -q brave
     export BROWSER=brave
 else if type -q google-chrome-stable
     export BROWSER=google-chrome-stable
-end
-
-if not string match -q -- "$HOME/.local/bin" $PATH
-    set -gx PATH "$HOME/.local/bin" $PATH
 end
 
 # pnpm

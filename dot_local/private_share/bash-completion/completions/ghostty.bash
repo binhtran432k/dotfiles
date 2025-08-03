@@ -77,6 +77,7 @@ _ghostty() {
     config+=" --adjust-cursor-thickness="
     config+=" --adjust-cursor-height="
     config+=" --adjust-box-thickness="
+    config+=" --adjust-icon-height="
     config+=" --grapheme-width-method="
     config+=" --freetype-load-flags="
     config+=" --theme="
@@ -102,6 +103,7 @@ _ghostty() {
     config+=" --mouse-shift-capture="
     config+=" --mouse-scroll-multiplier="
     config+=" --background-opacity="
+    config+=" '--background-opacity-cells '"
     config+=" --background-blur="
     config+=" --unfocused-split-opacity="
     config+=" --unfocused-split-fill="
@@ -115,6 +117,7 @@ _ghostty() {
     config+=" --scrollback-limit="
     config+=" --link="
     config+=" '--link-url '"
+    config+=" --link-previews="
     config+=" '--maximize '"
     config+=" '--fullscreen '"
     config+=" --title="
@@ -209,7 +212,7 @@ _ghostty() {
     config+=" '--gtk-wide-tabs '"
     config+=" --gtk-custom-css="
     config+=" '--desktop-notifications '"
-    config+=" '--bold-is-bright '"
+    config+=" --bold-color="
     config+=" --term="
     config+=" --enquiry-response="
     config+=" --launched-from="
@@ -250,6 +253,7 @@ _ghostty() {
       --adjust-cursor-thickness) return ;;
       --adjust-cursor-height) return ;;
       --adjust-box-thickness) return ;;
+      --adjust-icon-height) return ;;
       --grapheme-width-method) mapfile -t COMPREPLY < <( compgen -W "legacy unicode" -- "$cur" ); _add_spaces ;;
       --freetype-load-flags) mapfile -t COMPREPLY < <( compgen -W "hinting no-hinting force-autohint no-force-autohint monochrome no-monochrome autohint no-autohint" -- "$cur" ); _add_spaces ;;
       --theme) _themes ;;
@@ -275,6 +279,7 @@ _ghostty() {
       --mouse-shift-capture) mapfile -t COMPREPLY < <( compgen -W "false true always never" -- "$cur" ); _add_spaces ;;
       --mouse-scroll-multiplier) return ;;
       --background-opacity) return ;;
+      --background-opacity-cells) return ;;
       --background-blur) return ;;
       --unfocused-split-opacity) return ;;
       --unfocused-split-fill) return ;;
@@ -288,6 +293,7 @@ _ghostty() {
       --scrollback-limit) return ;;
       --link) return ;;
       --link-url) return ;;
+      --link-previews) mapfile -t COMPREPLY < <( compgen -W "false true osc8" -- "$cur" ); _add_spaces ;;
       --maximize) return ;;
       --fullscreen) return ;;
       --title) return ;;
@@ -345,7 +351,7 @@ _ghostty() {
       --quick-terminal-space-behavior) mapfile -t COMPREPLY < <( compgen -W "remain move" -- "$cur" ); _add_spaces ;;
       --quick-terminal-keyboard-interactivity) mapfile -t COMPREPLY < <( compgen -W "none on-demand exclusive" -- "$cur" ); _add_spaces ;;
       --shell-integration) mapfile -t COMPREPLY < <( compgen -W "none detect bash elvish fish zsh" -- "$cur" ); _add_spaces ;;
-      --shell-integration-features) mapfile -t COMPREPLY < <( compgen -W "cursor no-cursor sudo no-sudo title no-title" -- "$cur" ); _add_spaces ;;
+      --shell-integration-features) mapfile -t COMPREPLY < <( compgen -W "cursor no-cursor sudo no-sudo title no-title ssh-env no-ssh-env ssh-terminfo no-ssh-terminfo" -- "$cur" ); _add_spaces ;;
       --command-palette-entry) return ;;
       --osc-color-report-format) mapfile -t COMPREPLY < <( compgen -W "none 8-bit 16-bit" -- "$cur" ); _add_spaces ;;
       --vt-kam-allowed) return ;;
@@ -382,7 +388,7 @@ _ghostty() {
       --gtk-wide-tabs) return ;;
       --gtk-custom-css) _files ;;
       --desktop-notifications) return ;;
-      --bold-is-bright) return ;;
+      --bold-color) return ;;
       --term) return ;;
       --enquiry-response) return ;;
       --launched-from) return ;;
@@ -400,9 +406,11 @@ _ghostty() {
     local list_keybinds="'--default ' '--docs ' '--plain ' --help"
     local list_themes="'--path ' '--plain ' --color= --help"
     local list_actions="'--docs ' --help"
+    local ssh_cache="'--clear ' --add= --remove= --host= --expire-days= --help"
     local show_config="'--default ' '--changes-only ' '--docs ' --help"
     local validate_config="--config-file= --help"
     local show_face="--cp= --string= --style= --presentation= --help"
+    local new_window="--class= --help"
 
     case "${COMP_WORDS[1]}" in
       +list-fonts)
@@ -436,6 +444,16 @@ _ghostty() {
           *) mapfile -t COMPREPLY < <( compgen -W "$list_actions" -- "$cur" ) ;;
         esac
       ;;
+      +ssh-cache)
+        case $prev in
+          --clear) return ;;
+          --add) return;;
+          --remove) return;;
+          --host) return;;
+          --expire-days) return;;
+          *) mapfile -t COMPREPLY < <( compgen -W "$ssh_cache" -- "$cur" ) ;;
+        esac
+      ;;
       +show-config)
         case $prev in
           --default) return ;;
@@ -459,6 +477,12 @@ _ghostty() {
           *) mapfile -t COMPREPLY < <( compgen -W "$show_face" -- "$cur" ) ;;
         esac
       ;;
+      +new-window)
+        case $prev in
+          --class) return;;
+          *) mapfile -t COMPREPLY < <( compgen -W "$new_window" -- "$cur" ) ;;
+        esac
+      ;;
       *) mapfile -t COMPREPLY < <( compgen -W "--help" -- "$cur" ) ;;
     esac
 
@@ -474,12 +498,14 @@ _ghostty() {
   topLevel+=" +list-themes"
   topLevel+=" +list-colors"
   topLevel+=" +list-actions"
+  topLevel+=" +ssh-cache"
   topLevel+=" +edit-config"
   topLevel+=" +show-config"
   topLevel+=" +validate-config"
   topLevel+=" +show-face"
   topLevel+=" +crash-report"
   topLevel+=" +boo"
+  topLevel+=" +new-window"
 
   local cur=""; local prev=""; local prevWasEq=false; COMPREPLY=()
   local ghostty="$1"

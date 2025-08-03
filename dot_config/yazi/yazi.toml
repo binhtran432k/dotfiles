@@ -5,7 +5,9 @@ prepend_preloaders = [
   { mime = "video/*", run = "noop" },
 ]
 prepend_previewers = [
+  { mime = "application/javascript", run = "code" },
   { mime = "application/json", run = "code" },
+  { mime = "image/svg+xml", run = "code" },
   { mime = "application/*", run = "noop" },
   { mime = "image/*", run = "noop" },
   { mime = "video/*", run = "noop" },
