@@ -1,8 +1,0 @@
-[Unit]
-Description=Trigger eye strain notification on 20 and 40 min mark of every hour.
-
-[Timer]
-OnCalendar=*-*-* *:20,40:00
-
-[Install]
-WantedBy=timers.target

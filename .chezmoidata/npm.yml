@@ -1,4 +1,0 @@
-npm:
-  - "@biomejs/biome"
-  - tree-sitter-cli
-  - node-gyp

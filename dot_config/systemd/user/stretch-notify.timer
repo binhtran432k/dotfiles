@@ -1,8 +1,0 @@
-[Unit]
-Description=Trigger strecth notification every hour.
-
-[Timer]
-OnCalendar=*-*-* *:00:00
-
-[Install]
-WantedBy=timers.target
