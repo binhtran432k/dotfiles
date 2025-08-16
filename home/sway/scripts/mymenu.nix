@@ -1,13 +1,13 @@
 { pkgs, ... }:
 let
   ## define the font for dmenu to be used
-  fn = "Noto Sans 12";
+  fn = "monospace 12";
   ## background colour for unselected menu-items
-  nb = "282A36";
+  nb = "222233";
   ## textcolour for unselected menu-items
-  nf = "F8F8F2";
+  nf = "FFFFEE";
   ## background colour for selected menu-items
-  sb = "6272A4";
+  sb = "6677AA";
   ## textcolour for selected menu-items
   sf = nf;
   ## export our variables

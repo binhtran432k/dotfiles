@@ -228,7 +228,7 @@
           bind -s --preset -M visual -m default ctrl-c end-selection repaint-mode
 
           bind -s --preset -m replace_one r end-selection repaint-mode
-          bind -s --preset -M replace_one -m default \'\' begin-selection kill-selection end-selection self-insert backward-char repaint-mode
+          bind -s --preset -M replace_one -m default "" begin-selection kill-selection end-selection self-insert backward-char repaint-mode
 
           bind -s --preset [ history-token-search-backward
 

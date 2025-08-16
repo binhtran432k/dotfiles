@@ -1,2 +1,17 @@
 [general]
 import = ["themes/dracutux.toml"]
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "["
+chars = "\u001b"
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "j"
+chars = "\u0009"
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "k"
+chars = "\u001b[Z"

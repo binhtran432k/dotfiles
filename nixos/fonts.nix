@@ -24,7 +24,7 @@
         "Noto Color Emoji"
       ];
       monospace = [
-        "Maple Mono"
+        "Maple Mono NF"
         "Noto Sans Mono"
         "Noto Color Emoji"
       ];

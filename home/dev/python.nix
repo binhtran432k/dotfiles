@@ -8,7 +8,6 @@
     ]))
   ]
   ++ (with pkgs; [
-    basedpyright
-    ruff
+    ty
   ]);
 }

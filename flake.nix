@@ -101,18 +101,13 @@
       # Home Manager configuration entrypoint
       # Available through 'home-manager switch --flake .#{hostname}'
       homeConfigurations = {
-        yugi =
-          let
-            system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system};
-          in
-          home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [ ./hosts/yugi/home.nix ];
-            extraSpecialArgs = {
-              inherit inputs outputs;
-            };
+        yugi = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [ ./hosts/yugi/home.nix ];
+          extraSpecialArgs = {
+            inherit inputs outputs;
           };
+        };
       };
     };
 }

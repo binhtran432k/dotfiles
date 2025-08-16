@@ -7,26 +7,16 @@
     # Modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
-    ../../home/bash.nix
-    ../../home/eza.nix
     ../../home/fish.nix
     ../../home/git.nix
     ../../home/helix.nix
     ../../home/lazygit.nix
     ../../home/neovim.nix
     ../../home/yazi.nix
-    ../../home/zoxide.nix
     ../../home/zellij.nix
 
-    ../../home/dev/lua.nix
-    ../../home/dev/markdown.nix
-    ../../home/dev/misc.nix
-    ../../home/dev/nix.nix
     ../../home/dev/python.nix
     ../../home/dev/rust.nix
-    ../../home/dev/toml.nix
-    ../../home/dev/web.nix
-    ../../home/dev/yaml.nix
   ];
 
   # Enable home-manager and git

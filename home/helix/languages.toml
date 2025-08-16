@@ -17,3 +17,11 @@ language-servers = ["vscode-html-language-server", "emmet-lsp"]
 [[language]]
 name = "javascript"
 language-servers = ["typescript-language-server", "emmet-lsp"]
+
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = ["tsconfig.json", "tsconfig.*.jsonc"]
+url = "https://json.schemastore.org/tsconfig.json"
+
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = [ "package.json" ]
+url = "https://json.schemastore.org/package.json"

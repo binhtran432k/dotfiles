@@ -4,6 +4,13 @@
     sessionVariables = {
       GTK_THEME = "adw-gtk3-dark";
     };
+    pointerCursor = {
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-dark";
+      size = 24;
+      gtk.enable = true;
+      x11.enable = true;
+    };
   };
   gtk = {
     enable = true;
