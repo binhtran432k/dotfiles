@@ -1,7 +1,8 @@
 .PHONY: joey
 joey:
-	sudo nixos-rebuild switch --flake ".#joey"
+	nixos-rebuild switch --flake ".#joey" --sudo
 
 .PHONY: yugi
 yugi:
-	sudo nixos-rebuild switch --flake ".#yugi"
+	nixos-rebuild switch --flake ".#yugi" --sudo
+	nix run home-manager -- switch --flake ".#yugi"

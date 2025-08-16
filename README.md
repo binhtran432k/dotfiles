@@ -79,7 +79,9 @@ This dotfiles repository includes configurations for:
 
 ## Cheat Sheets
 
-- `mknixos`: To rebuild and apply dotfiles in any location
+- `mknixos`: To rebuild and apply nixos dotfiles in any location
+- `mkhome`: To rebuild and apply home dotfiles in any location
+- `nix flake update`: To update flake lockfile
 - `nix-store --optimise`: To optimizing the store for a long time
 - `nix-collect-garbage` or `nix-store --gc`: To run garbage collection
 - `sudo nix-collect-garbage -d`: To remove all except current generation

@@ -23,7 +23,7 @@ in
     ../../home/fish.nix
     ../../home/fzf.nix
     ../../home/git.nix
-    ../../home/gtk.nix
+    ../../home/desktop.nix
     ../../home/helix.nix
     ../../home/i3status.nix
     ../../home/lazygit.nix
@@ -56,12 +56,13 @@ in
   programs.helix.defaultEditor = true;
 
   # Nicely reload system units when changing configs
-  # systemd.user.startServices = "sd-switch";
+  systemd.user.startServices = "sd-switch";
 
   home = {
     inherit username homeDirectory;
     shellAliases = {
-      mknixos = "sudo nixos-rebuild switch --flake ${homeDirectory}/dotfiles#yugi --fast";
+      mknixos = "nixos-rebuild switch --flake ${homeDirectory}/dotfiles#yugi --sudo";
+      mkhome = "home-manager switch --flake ${homeDirectory}/dotfiles#yugi";
     };
     sessionVariables = {
       BROWSER = "${pkgs.brave}/bin/brave";

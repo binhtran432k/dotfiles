@@ -1,5 +1,5 @@
 {
-  description = "Nix configs of Binh Tran";
+  description = "Nix dotfiles of Binh Tran";
 
   inputs = {
     # Nixpkgs
@@ -29,12 +29,12 @@
       "nix-command"
       "flakes"
     ];
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    # extra-substituters = [
+    #   "https://nix-community.cachix.org"
+    # ];
+    # extra-trusted-public-keys = [
+    #   "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    # ];
   };
 
   outputs =
@@ -63,7 +63,7 @@
       # Accessible through 'nix build', 'nix shell', etc
       packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
       # Formatter for nix files, available through 'nix fmt'
-      # Options: nixfmt-rfc-style, alejandra
+      # Options: nixfmt-tree, alejandra
       formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
 
       # Custom packages and modifications, exported as overlays
@@ -94,11 +94,25 @@
           specialArgs = {
             inherit inputs outputs;
           };
-          modules = [
-            inputs.nixos-wsl.nixosModules.default
-            ./hosts/yugi/configuration.nix
-          ];
+          modules = [ ./hosts/yugi/configuration.nix ];
         };
+      };
+
+      # Home Manager configuration entrypoint
+      # Available through 'home-manager switch --flake .#{hostname}'
+      homeConfigurations = {
+        yugi =
+          let
+            system = "x86_64-linux";
+            pkgs = nixpkgs.legacyPackages.${system};
+          in
+          home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            modules = [ ./hosts/yugi/home.nix ];
+            extraSpecialArgs = {
+              inherit inputs outputs;
+            };
+          };
       };
     };
 }

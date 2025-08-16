@@ -1,14 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-{
-  pkgs,
-  inputs,
-  ...
-}:
-let
-  defaultUsername = "binhtran432k";
-in
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -30,9 +23,6 @@ in
     ../../nixos/sound.nix
     ../../nixos/sway.nix
     ../../nixos/touchpad.nix
-
-    ### Home Manager
-    inputs.home-manager.nixosModules.home-manager
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -63,22 +53,15 @@ in
   # services.printing.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${defaultUsername} = {
-    isNormalUser = true;
-    initialPassword = "changeme";
-    extraGroups = [
-      "wheel"
-      "networkmanager"
-      "video"
-    ]; # Enable ‘sudo’ for the user.
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${defaultUsername} = import ./home.nix;
-    extraSpecialArgs = {
-      inherit inputs;
+  users.users = {
+    binhtran432k = {
+      isNormalUser = true;
+      initialPassword = "changeme";
+      extraGroups = [
+        "wheel" # Enable ‘sudo’ for the user.
+        "networkmanager"
+        "video"
+      ];
     };
   };
 
