@@ -5,11 +5,11 @@
     packages = with pkgs; [
       # Microsoft fonts
       corefonts
-      vistafonts
+      vista-fonts
 
       # Desktop
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
 
       # Mono
       maple-mono.NF

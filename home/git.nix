@@ -2,10 +2,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Binh Tran";
-    userEmail = "binhtran432k@gmail.com";
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Binh Tran";
+        email = "binhtran432k@gmail.com";
+      };
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       credential.helper = [

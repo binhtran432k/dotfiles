@@ -29,6 +29,7 @@
     kdePackages.ktorrent # Powerful BitTorrent client
   ];
   environment.systemPackages = with pkgs; [
+    adwaita-icon-theme # for lacking icon in gtk apps
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
   ];
 }
