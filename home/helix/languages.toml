@@ -11,6 +11,10 @@ name = "ghostty"
 file-types = [{ glob = "ghostty/config" }, { glob = "ghostty/themes/*" }]
 
 [[language]]
+name = "jsonc"
+file-types = [{ glob = "*.jsonc" }, { glob = "tsconfig.json" }, { glob = "tsconfig.*.json" }]
+
+[[language]]
 name = "html"
 language-servers = ["vscode-html-language-server", "emmet-lsp"]
 
@@ -19,7 +23,7 @@ name = "javascript"
 language-servers = ["typescript-language-server", "emmet-lsp"]
 
 [[language-server.vscode-json-language-server.config.json.schemas]]
-fileMatch = ["tsconfig.json", "tsconfig.*.jsonc"]
+fileMatch = ["tsconfig.json", "tsconfig.*.json"]
 url = "https://json.schemastore.org/tsconfig.json"
 
 [[language-server.vscode-json-language-server.config.json.schemas]]
