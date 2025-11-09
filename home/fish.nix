@@ -2,7 +2,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      fish_helix_key_bindings
+      fish_vi_key_bindings
     '';
     functions = {
       fish_default_mode_prompt = {
