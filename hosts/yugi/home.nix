@@ -16,7 +16,7 @@ in
     ../../home/fish.nix
     ../../home/git.nix
     ../../home/ghostty.nix
-    ../../home/helix.nix
+    # ../../home/helix.nix
     ../../home/lazygit.nix
     ../../home/ripgrep.nix
     ../../home/yazi.nix
@@ -33,7 +33,7 @@ in
     # ../../home/wpaperd.nix
 
     ../../home/dev/python.nix
-    ../../home/dev/rust.nix
+    # ../../home/dev/rust.nix
     ../../home/dev/tree-sitter.nix
   ];
 
@@ -60,52 +60,55 @@ in
       NIXOS_OZONE_WL = "1";
     };
     packages = with pkgs; [
-      # Browser
+      ### Browser
       brave
-      # Mail
+      google-chrome
+      ### Mail
       # thunderbird
-      # Learning
-      # exercism
-      # Office
-      onlyoffice-bin
-      # Media
+      ### Learning
+      exercism
+      ### Office
+      libreoffice
+      ### Media
       mpv
       # vimiv-qt
-      # Utils
+      ### Utils
       inkscape
       gimp
       edir
       steam-run
       vscode
       lefthook
-      # Dev Yaml
-      yaml-language-server
-      # Dev C/C++
-      clang-tools
-      # Dev Nix
+      vim
+      ### Dev Yaml
+      # yaml-language-server
+      ### Dev C/C++
+      # clang-tools
+      ### Dev Nix
       nil
-      # Dev toml
-      taplo
-      # Dev go
+      nixfmt
+      ### Dev toml
+      # taplo
+      ### Dev go
       # go
       # gopls
       # golangci-lint-langserver
-      # Dev markdown
-      marksman
-      # Dev Node
+      ### Dev markdown
+      # marksman
+      ### Dev Node
       bun
-      pnpm
+      # pnpm
       nodejs
-      # Dev Html/Css/Json/JS
-      vscode-langservers-extracted
+      ### Dev Html/Css/Json/JS
+      # vscode-langservers-extracted
       typescript
-      typescript-language-server
-      emmet-language-server
-      # Web Formatter
-      biome
+      # typescript-language-server
+      # emmet-language-server
+      ### Web Formatter
+      # biome
       # nodePackages.prettier
-      # Dev zig
-      # zig_0_15
+      ### Dev zig
+      zig_0_15
       # zls_0_15
     ];
 
@@ -122,6 +125,11 @@ in
     bash.enable = true;
     eza.enable = true;
     zoxide.enable = true;
+    git = {
+      settings = {
+        core.editor = "code --wait";
+      };
+    };
   };
   lib.file.mkDotfilesSymlink = link: {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/${link}";
